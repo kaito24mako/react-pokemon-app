@@ -3,15 +3,15 @@ import "./CardItemColours.css";
 
 import CloseBtn from "../button/CloseBtn";
 
-function CardItem({ cardItem, setCardItem, handleCloseModal }) {
-  function handleFavouriteCard() {
-    setCardItem();
-    console.log(cardItem);
-  }
+function CardItem({
+  cardItem,
+  setCardItem,
+  handleCloseModal,
+  favourites,
+  toggleFavourite,
+}) {
   return (
     <>
-      {/* <CloseBtn handleCloseModal={handleCloseModal} /> */}
-
       {cardItem &&
         cardItem.map((card, index) => (
           // mapping types as a class for different bg colours per type
@@ -27,7 +27,12 @@ function CardItem({ cardItem, setCardItem, handleCloseModal }) {
               <div className="image-details-wrapper">
                 <button
                   className="favourite-button"
-                  onClick={handleFavouriteCard}
+                  onClick={(e) => {
+                    // stop modal from closing
+                    e.stopPropagation();
+                    // injects the favourited card to see whether it should be added or removed in the favourites array
+                    toggleFavourite(card);
+                  }}
                 >
                   ♥️
                 </button>

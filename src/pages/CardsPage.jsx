@@ -16,6 +16,8 @@ function CardsPage({
   handleSubmit,
   fetchingCards,
   fetchCardById,
+  favourites,
+  toggleFavourite,
 }) {
   // to track if a card was clicked to open modal
   // easier to track than cardItem since cardItem is an array of objects
@@ -52,6 +54,7 @@ function CardsPage({
         </div>
 
         <CardList
+          // render the cards array
           cards={cards}
           fetchingCards={fetchingCards}
           fetchCardById={fetchCardById}
@@ -73,6 +76,8 @@ function CardsPage({
             cardItem={cardItem}
             setCardItem={setCardItem}
             handleCloseModal={handleCloseModal}
+            favourites={favourites}
+            toggleFavourite={toggleFavourite}
             // onClick={(e) => e.stopPropagation()}
           />
         </div>

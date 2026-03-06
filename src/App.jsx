@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import axios from "axios";
 
@@ -15,6 +15,38 @@ function App() {
   const [cardItem, setCardItem] = useState([]); // for single card item
   const [search, setSearch] = useState(""); // string of searched card
   const [fetchingCards, setFetchingCards] = useState(false); // loading spinner when data hasn't rendered
+
+  // 1. calls localStorage only on the first render (mount)
+  // 2. getItem returns a string if favourites exists and turns/parses it into an array, otherwise start with an empty array
+  const [favourites, setFavourites] = useState(() => {
+    const saved = localStorage.getItem("favourites");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // 3. saves the updated favourites array to localStorage whenever it changes
+  // stringify converts it to a string for localStorage to store
+  // useEffect keeps storage in sync whenever favourites change
+  useEffect(() => {
+    localStorage.setItem("favourites", JSON.stringify(favourites), [
+      favourites,
+    ]);
+  });
+
+  // 4. adds or removes the card from the favourites array
+  // card is from CardItem.jsx, in which the clicked card is mapped over to show its details
+  function toggleFavourite(card) {
+    setFavourites((prev) => {
+      // checks if this card is already in favourites
+      const cardExists = prev.some((c) => c.id === card.id);
+      // if it exists, returns new array with that card removed
+      // if it doesn't exist, returns new array with that card added
+      if (cardExists) {
+        return prev.filter((c) => c.id !== card.id);
+      } else {
+        return [...prev, { id: card.id, name: card.name, image: card.image }];
+      }
+    });
+  }
 
   async function fetchCardsByName() {
     try {
@@ -93,6 +125,8 @@ function App() {
               fetchingCards={fetchingCards}
               fetchCardById={fetchCardById}
               setCardItem={setCardItem}
+              favourites={favourites}
+              toggleFavourite={toggleFavourite}
             />
           }
         />
@@ -100,13 +134,12 @@ function App() {
           path="/collection"
           element={
             <CollectionPage
-              cards={cards}
-              search={search}
               cardItem={cardItem}
-              handleSearch={handleSearch}
-              handleSubmit={handleSubmit}
+              setCardItem={setCardItem}
               fetchingCards={fetchingCards}
               fetchCardById={fetchCardById}
+              favourites={favourites}
+              toggleFavourite={toggleFavourite}
             />
           }
         />
