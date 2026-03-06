@@ -1,0 +1,13 @@
+.close-modal-button {
+  position: absolute;
+  padding: 3px;
+  top: 2%;
+  left: 95%;
+  z-index: 2;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.close-modal-button:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,27 @@
+.cards-grid-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.card-wrapper {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.1s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 280px;
+
+}
+
+.card-wrapper:hover {
+  transform: scale(1.05);
+}

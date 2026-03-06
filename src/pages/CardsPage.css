@@ -1,0 +1,81 @@
+.cardsPage-container {
+  display: flex;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  height: 93dvh;
+  overflow-y: scroll;
+  background-color: var(--yellow-dark);
+}
+
+.title-container-two {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.title-container-two p {
+  font-weight: 600;
+  font-family: var(--font-heading);
+}
+
+.counter {
+  font-size: var(--small);
+  font-family: var(--font-heading);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* flex-wrap: wrap; */
+}
+
+.dropdown-button,
+.order-button {
+  padding: 5px 10px;
+  border: 2px solid var(--black);
+  border-radius: 30px;
+  font-size: var(--vsmall);
+  font-family: var(--font-heading);
+}
+
+.quote {
+  margin: auto;
+  padding-bottom: 150px;
+  font-size: var(--large);
+  font-weight: 400;
+  font-family: var(--font-heading);
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.quote.fade-out {
+  opacity: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  /* covers entire parent container */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* .modal-content {
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+} */
+
+@media (max-width: 910px) {
+  .search-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

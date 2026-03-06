@@ -1,0 +1,42 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 4px solid var(--black);
+}
+
+.logo-title-button {
+  display: flex;
+  gap: 5px;
+  font-family: var(--font-heading);
+}
+
+.ui-container,
+.pages-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.link {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  transition: color 0.1s ease-out;
+}
+
+.link:hover {
+  color: var(--red);
+}
+
+@media (max-width: 930px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ui-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

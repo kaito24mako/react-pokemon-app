@@ -1,0 +1,44 @@
+.colorless {
+  background: linear-gradient(to top right, #d0c5cd, #ece3e9);
+}
+
+.darkness {
+  /* background: radial-gradient(ellipse at bottom left, #34495d, #2c3d4f, #ee7738); */
+  background: linear-gradient(to top right, #1a294a, #2c3b51, #6884ab);
+}
+
+.dragon {
+  background: linear-gradient(to top right, #34495d, #2c3d4f, #ee7738);
+}
+
+.fairy {
+  background: linear-gradient(to top right, #cd5f8d, #ce709f, #fbcfe8);
+}
+
+.fighting {
+  background: linear-gradient(to top right, #a54704, #d25f0d, #f1bf86);
+}
+
+.fire {
+  background: linear-gradient(to top right, #810202, #ce3939, #ff95a5);
+}
+
+.grass {
+  background: linear-gradient(to top right, #234e34, #2d844d, #7aeea5);
+}
+
+.lightning {
+  background: linear-gradient(to top right, #f59e0b, #fde68a);
+}
+
+.metal {
+  background: linear-gradient(to top right, #333337, #5d5d67, #cacad7);
+}
+
+.psychic {
+  background: linear-gradient(to top right, #453355, #8a60ad, #d0a4f4);
+}
+
+.water {
+  background: linear-gradient(to top right, #126e82, #51c4d3, #c2e2ee);
+}
