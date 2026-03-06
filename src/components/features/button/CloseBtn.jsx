@@ -1,4 +1,3 @@
-import "./CloseBtn.css";
 import close from "../../../assets/close.png";
 
 function CloseBtn({ handleCloseModal }) {

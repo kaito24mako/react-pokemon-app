@@ -3,8 +3,6 @@ import { useState } from "react";
 import CardList from "../components/features/card/CardList";
 import CardItem from "../components/features/card/CardItem";
 
-import "./CollectionPage.css";
-
 function CollectionPage({
   cardItem,
   setCardItem,

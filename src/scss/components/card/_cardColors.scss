@@ -1,3 +1,5 @@
+@use "../../abstracts/" as *;
+
 .colorless {
   background: linear-gradient(to top right, #d0c5cd, #ece3e9);
 }

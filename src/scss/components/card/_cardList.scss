@@ -1,3 +1,5 @@
+@use "../../abstracts/" as *;
+
 .cards-grid-container {
   display: flex;
   gap: 15px;
@@ -19,7 +21,6 @@
   align-items: center;
   width: 200px;
   height: 280px;
-
 }
 
 .card-wrapper:hover {

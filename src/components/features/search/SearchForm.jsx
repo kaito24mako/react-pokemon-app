@@ -1,5 +1,3 @@
-import "./SearchForm.css";
-
 // import { useForm } from "react-router-dom";
 // import Joi from "joi";
 // import { joiResolver } from "@hookform/resolvers/joi";

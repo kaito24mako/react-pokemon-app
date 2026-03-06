@@ -1,5 +1,3 @@
-import "./Filterbar.css";
-
 // the vertical radio bar on Cards and Collection pages
 function Filterbar() {
   return (

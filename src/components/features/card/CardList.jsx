@@ -1,5 +1,4 @@
 import { SyncLoader } from "react-spinners";
-import "./CardList.css";
 
 function CardList({ cards, fetchingCards, fetchCardById, handleClickedCard }) {
   return (

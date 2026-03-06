@@ -5,8 +5,6 @@ import Filterbar from "../components/features/filter/Filterbar";
 import CardList from "../components/features/card/CardList";
 import CardItem from "../components/features/card/CardItem";
 
-import "./CardsPage.css";
-
 function CardsPage({
   cards,
   search,

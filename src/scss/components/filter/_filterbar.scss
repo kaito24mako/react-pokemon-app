@@ -1,9 +1,11 @@
+@use "../../abstracts/" as *;
+
 .filter-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 20px;
-  border-right: 3px solid var(--black);
+  border-right: 3px solid $primary-color;
 }
 
 .filter-container form {
@@ -23,5 +25,5 @@
 }
 
 .input-wrapper label {
-  font-size: var(--small);
+  font-size: $small-font;
 }

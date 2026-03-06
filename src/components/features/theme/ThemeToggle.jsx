@@ -1,7 +1,5 @@
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
-import "./ThemeToggle.css";
-
 function ThemeToggle() {
   return (
     <button className="theme-buttons">

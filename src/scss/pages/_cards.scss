@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 .cardsPage-container {
   display: flex;
 }
@@ -9,7 +11,7 @@
   padding: 20px;
   height: 93dvh;
   overflow-y: scroll;
-  background-color: var(--yellow-dark);
+  background-color: $primary-bg-dark-color;
 }
 
 .title-container-two {
@@ -20,12 +22,12 @@
 
 .title-container-two p {
   font-weight: 600;
-  font-family: var(--font-heading);
+  font-family: $primary-font;
 }
 
 .counter {
-  font-size: var(--small);
-  font-family: var(--font-heading);
+  font-size: $small-font;
+  font-family: $primary-font;
 }
 
 .search-container {
@@ -38,18 +40,18 @@
 .dropdown-button,
 .order-button {
   padding: 5px 10px;
-  border: 2px solid var(--black);
+  border: 2px solid $primary-color;
   border-radius: 30px;
-  font-size: var(--vsmall);
-  font-family: var(--font-heading);
+  font-size: $vsmall-font;
+  font-family: $primary-font;
 }
 
 .quote {
   margin: auto;
   padding-bottom: 150px;
-  font-size: var(--large);
+  font-size: $large-font;
   font-weight: 400;
-  font-family: var(--font-heading);
+  font-family: $primary-font;
   opacity: 1;
   transition: opacity 0.6s ease;
 }

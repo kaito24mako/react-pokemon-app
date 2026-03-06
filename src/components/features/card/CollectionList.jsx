@@ -1,7 +1,5 @@
 import { SyncLoader } from "react-spinners";
 
-import "./CollectionList.css";
-
 function CollectionList({
   cards,
   fetchingCards,

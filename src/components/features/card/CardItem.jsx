@@ -1,6 +1,3 @@
-import "./CardItem.css";
-import "./CardItemColours.css";
-
 import CloseBtn from "../button/CloseBtn";
 
 function CardItem({
