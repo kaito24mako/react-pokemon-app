@@ -2,14 +2,14 @@
 // import Joi from "joi";
 // import { joiResolver } from "@hookform/resolvers/joi";
 
-function SearchForm({ search, handleSearch, handleSubmit }) {
+function SearchForm({ search, handleSearch, handleSubmitSearch }) {
   // const schema = Joi.object({
   //   search: Joi.string().min(1).max(255),
   // });
 
   // const {
   //   control,
-  //   handleSubmit,
+  //   handleSubmitSearch,
   //   register,
   //   formState: { errors },
   // } = useForm({
@@ -17,7 +17,7 @@ function SearchForm({ search, handleSearch, handleSubmit }) {
   // });
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="form-container" onSubmit={handleSubmitSearch}>
       <label for="card-search">🔎</label>
       <input
         type="search"

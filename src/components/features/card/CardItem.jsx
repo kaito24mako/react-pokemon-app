@@ -13,6 +13,7 @@ import lightning from "../../../assets/types/lightning.png";
 import psychic from "../../../assets/types/psychic.png";
 import steel from "../../../assets/types/steel.png";
 import water from "../../../assets/types/water.png";
+import pokeball from "../../../assets/pokeball.png";
 
 function CardItem({
   cardItem,
@@ -36,8 +37,24 @@ function CardItem({
     water,
   };
 
-  function notifyFavourited() {
-    toast("Added to your collection!");
+  // useState only stores the state locally for one mount/render!
+  // so useState won't work when switching between the cards and collection page
+  // instead, use array.some() method
+  // const [inCollection, setInCollection] = useState(false);
+
+  function handleFavouriteClick(e, card) {
+    // stop modal from closing
+    e.stopPropagation();
+    // injects the favourited card to see whether it should be added or removed in the favourites array
+    toggleFavourite(card);
+
+    const inCollection = favourites.some((c) => c.id === card.id);
+
+    if (inCollection) {
+      toast(`${card.name} removed from your party`);
+    } else {
+      toast(`${card.name} added your party!`);
+    }
   }
 
   return (
@@ -58,15 +75,15 @@ function CardItem({
                 <button
                   className="favourite-button"
                   onClick={(e) => {
-                    // stop modal from closing
-                    e.stopPropagation();
-                    // injects the favourited card to see whether it should be added or removed in the favourites array
-                    toggleFavourite(card);
-                    notifyFavourited();
+                    handleFavouriteClick(e, card);
                   }}
                 >
-                  <p>⭐</p>
-                  <p>Add to collection</p>
+                  <img src={pokeball} />
+                  <p>
+                    {favourites.some((c) => c.id === card.id)
+                      ? "Remove from party"
+                      : "Add to party"}
+                  </p>
                 </button>
 
                 <ul className="details-wrapper">

@@ -14,8 +14,8 @@ function Navbar() {
           <Link className="link" to="/cards">
             Cards
           </Link>
-          <Link className="link" to="/collection">
-            Collection
+          <Link className="link" to="/party">
+            My Party
           </Link>
           <ThemeToggle />
         </div>

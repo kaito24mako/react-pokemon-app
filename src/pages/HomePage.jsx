@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 
-import Alert from "../components/features/notification/Alert";
-
 function HomePage() {
   return (
     <div className="home-container">
       <div className="title-container">
-        <Alert />
         <h1>Wanna Search 'Em All?</h1>
         <p>Then let's get to work, trainer!</p>
       </div>
@@ -48,12 +45,12 @@ function HomePage() {
                 of cards and collections
               </h3>
               <p>
-                Store your favourite and owned cards into your collection to
-                show off to your friends!
+                Add your favourite and owned cards into your party to show off
+                to your friends!
               </p>
             </div>
-            <Link className="start-button" to="/collection">
-              Your Collection!
+            <Link className="start-button" to="/party">
+              Your Party!
             </Link>
           </div>
           <img

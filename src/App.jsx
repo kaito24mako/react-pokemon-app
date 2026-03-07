@@ -38,11 +38,11 @@ function App() {
   function toggleFavourite(card) {
     setFavourites((prev) => {
       // checks if this card is already in favourites
-      const cardExists = prev.some((c) => c.id === card.id);
+      const inCollection = prev.some((c) => c.id === card.id);
       console.log(favourites);
       // if it exists, returns new array with that card removed
       // if it doesn't exist, returns new array with that card added
-      if (cardExists) {
+      if (inCollection) {
         return prev.filter((c) => c.id !== card.id);
       } else {
         return [...prev, { id: card.id, name: card.name, image: card.image }];
@@ -103,7 +103,7 @@ function App() {
     setSearch(e.target.value);
   }
 
-  function handleSubmit(e) {
+  function handleSubmitSearch(e) {
     e.preventDefault();
     fetchCardsByName();
   }
@@ -123,7 +123,7 @@ function App() {
               search={search}
               cardItem={cardItem}
               handleSearch={handleSearch}
-              handleSubmit={handleSubmit}
+              handleSubmitSearch={handleSubmitSearch}
               fetchingCards={fetchingCards}
               fetchCardById={fetchCardById}
               setCardItem={setCardItem}
@@ -133,7 +133,7 @@ function App() {
           }
         />
         <Route
-          path="/collection"
+          path="/party"
           element={
             <CollectionPage
               cardItem={cardItem}

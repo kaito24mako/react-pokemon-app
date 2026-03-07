@@ -37,7 +37,7 @@ function CollectionPage({
     <div className="collectionPage-container">
       <div className="cards-container">
         <div className="title-container-two">
-          <p>My Collection</p>
+          <p>My Party</p>
           <span className="counter">{favourites.length} cards</span>
         </div>
 

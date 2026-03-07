@@ -12,7 +12,7 @@ function CardsPage({
   cardItem,
   setCardItem,
   handleSearch,
-  handleSubmit,
+  handleSubmitSearch,
   fetchingCards,
   fetchCardById,
   favourites,
@@ -53,7 +53,7 @@ function CardsPage({
           <SearchForm
             search={search}
             handleSearch={handleSearch}
-            handleSubmit={handleSubmit}
+            handleSubmitSearch={handleSubmitSearch}
           />
           <button className="dropdown-button">Sort by number ⤵︎</button>
           <button className="order-button">⇡ Ascending Order</button>
