@@ -3,17 +3,26 @@
 $primary-font: "Grandstander", "Segoe UI", sans-serif;
 $secondary-font: "Segoe UI", Helvetica, Arial, sans-serif;
 
-$primary-color: #1b1b1b;
+// $primary-color: #1b1b1b;
+$primary-color: white;
 $accent-color: #ff0000;
 $white-color: white;
 $grey-color: rgba(255, 255, 255, 0.807);
-$light-red-color: rgba(255, 0, 0, 0.7);
+$light-accent-color: rgba(255, 0, 0, 0.7);
 /* $blue-color: #3b79ca;
 $brown-color: #975e29;
 $light-brown-color: #975e298b; */
 
 $primary-bg-color: #ffde00;
 $primary-bg-dark-color: #f2d307;
+
+// $primary-bg-gradient-color:
+//   radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
+//   #f2d307;
+$primary-bg-gradient-color:
+  radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
+  #1a1a19;
+$secondary-bg-gradient-color: linear-gradient(to right, #f9d233, #f5c104);
 
 $vlarge-font: 3rem;
 $large-font: 1.5rem;
@@ -26,5 +35,5 @@ $medium-gap: 15px;
 $small-gap: 10px;
 $vsmall-gap: 5px;
 
-$medium-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-$small-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+$card-medium-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+$card-small-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);

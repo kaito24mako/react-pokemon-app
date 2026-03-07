@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 
+import pokeball from "../assets/pokeball.png";
+
 function HomePage() {
   return (
     <div className="home-container">
       <div className="title-container">
+        <img src={pokeball} className="floating-pokeball" />
         <h1>Wanna Search 'Em All?</h1>
         <p>Then let's get to work, trainer!</p>
       </div>
@@ -12,7 +15,7 @@ function HomePage() {
         <div className="featureOne-wrapper">
           <img
             src="https://assets.tcgdex.net/en/xy/xy2/69/high.webp"
-            className="home-card-image"
+            className="home-card-image card-one"
           />
           <div className="quote-button-wrapper">
             <div className="quote-wrapper">
@@ -45,8 +48,8 @@ function HomePage() {
                 of cards and collections
               </h3>
               <p>
-                Add your favourite and owned cards into your party to show off
-                to your friends!
+                Add your favourite and owned cards to your party to show off to
+                your friends!
               </p>
             </div>
             <Link className="start-button" to="/party">
@@ -55,7 +58,7 @@ function HomePage() {
           </div>
           <img
             src="https://assets.tcgdex.net/en/bw/bw11/RC24/high.webp"
-            className="home-card-image"
+            className="home-card-image card-two"
           />
         </div>
       </div>

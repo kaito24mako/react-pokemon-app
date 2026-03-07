@@ -25,7 +25,7 @@
 
   border: 1px solid transparent;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: $card-medium-shadow;
 }
 
 .left-container,
@@ -60,7 +60,7 @@
   gap: 8px;
   padding: 4px 6px;
   border-radius: 5px;
-  background-color: $light-red-color;
+  background-color: $light-accent-color;
   font-family: $primary-font;
   transition:
     transform 0.2s ease,
@@ -139,9 +139,9 @@
 
 .ability-title {
   padding: 0 5px;
-  border: 1px solid $light-red-color;
+  border: 1px solid $light-accent-color;
   border-radius: 5px;
-  background-color: $light-red-color;
+  background-color: $light-accent-color;
   font-size: $vsmall-font;
 }
 

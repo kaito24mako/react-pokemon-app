@@ -5,7 +5,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 4px solid $primary-color;
+  border-bottom: 3px solid $primary-color;
+  background: $secondary-bg-gradient-color;
+  font-size: 1.1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  .pokeball {
+    position: absolute;
+    width: 50px;
+    opacity: 0.3;
+  }
 }
 
 .logo-title-button {

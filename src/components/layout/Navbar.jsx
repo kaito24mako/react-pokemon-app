@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 
-import ThemeToggle from "../features/theme/ThemeToggle";
+import pokeball from "../../assets/pokeball.png";
 
 function Navbar() {
   return (
     <div className="nav-container">
       <Link className="logo-title-button" to="/">
-        <h1 className="logo">🗃️ Search 'Em All!</h1>
+        <h1 className="logo">
+          <img src={pokeball} className="pokeball" /> Search 'Em All!
+        </h1>
       </Link>
 
       <div className="ui-container">
@@ -17,7 +19,6 @@ function Navbar() {
           <Link className="link" to="/party">
             My Party
           </Link>
-          <ThemeToggle />
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
   padding: 20px;
   height: 93dvh;
   overflow-y: scroll;
-  background-color: $primary-bg-dark-color;
+  background: $primary-bg-gradient-color;
 }
 
 .title-container-two {
@@ -65,14 +65,6 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-
-/* .modal-content {
-  border-radius: 8px;
-  max-width: 800px;
-  width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
-} */
 
 @media (max-width: 910px) {
   .search-container {

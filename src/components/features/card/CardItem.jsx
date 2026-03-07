@@ -103,7 +103,7 @@ function CardItem({
               <div className="stats-container">
                 <div className="health-wrapper stat">
                   <p className="stat-title">Health</p>
-                  <p className="health-stat">❤️ {card.hp}</p>
+                  <p className="health-stat">♥️ {card.hp} HP</p>
                 </div>
 
                 <div className="type-wrapper stat">
