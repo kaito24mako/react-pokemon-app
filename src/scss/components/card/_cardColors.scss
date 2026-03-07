@@ -1,11 +1,14 @@
 @use "../../abstracts/" as *;
 
+.card-item-container {
+  background: linear-gradient(to top right, #d0c5cd, #ece3e9);
+}
+
 .colorless {
   background: linear-gradient(to top right, #d0c5cd, #ece3e9);
 }
 
 .darkness {
-  /* background: radial-gradient(ellipse at bottom left, #34495d, #2c3d4f, #ee7738); */
   background: linear-gradient(to top right, #1a294a, #2c3b51, #6884ab);
 }
 

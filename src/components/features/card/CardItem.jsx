@@ -11,7 +11,7 @@ function CardItem({
     <>
       {cardItem &&
         cardItem.map((card, index) => (
-          // mapping types as a class for different bg colours per type
+          // mapping types as a class for different background colours per card type
           <div
             className={`card-item-container ${card.types?.[0].toLowerCase()}`}
             key={index}
