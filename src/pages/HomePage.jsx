@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 
+import Alert from "../components/features/notification/Alert";
+
 function HomePage() {
   return (
     <div className="home-container">
       <div className="title-container">
+        <Alert />
         <h1>Wanna Search 'Em All?</h1>
         <p>Then let's get to work, trainer!</p>
       </div>

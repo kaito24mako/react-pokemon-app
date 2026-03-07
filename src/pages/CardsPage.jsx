@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import SearchForm from "../components/features/search/SearchForm";
+import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
 import Filterbar from "../components/features/filter/Filterbar";
 import CardList from "../components/features/card/CardList";
 import CardItem from "../components/features/card/CardItem";
@@ -21,6 +22,8 @@ function CardsPage({
   // easier to track than cardItem since cardItem is an array of objects
   const [clickedCard, setClickedCard] = useState(null);
 
+  const [colouredBackground, setColouredBackground] = useState(true);
+
   // open modal when a card is clicked
   function handleClickedCard(card) {
     setClickedCard(card);
@@ -29,6 +32,11 @@ function CardsPage({
   // close modal
   function handleCloseModal() {
     setClickedCard(null);
+  }
+
+  // for toggling between coloured and non-coloured card backgrounds
+  function handleColouredBackground() {
+    setColouredBackground((prev) => !prev);
   }
 
   return (
@@ -49,6 +57,10 @@ function CardsPage({
           />
           <button className="dropdown-button">Sort by number ⤵︎</button>
           <button className="order-button">⇡ Ascending Order</button>
+          <ToggleCardBackground
+            handleColouredBackground={handleColouredBackground}
+            colouredBackground={colouredBackground}
+          />
         </div>
 
         <CardList
@@ -76,7 +88,8 @@ function CardsPage({
             handleCloseModal={handleCloseModal}
             favourites={favourites}
             toggleFavourite={toggleFavourite}
-            // onClick={(e) => e.stopPropagation()}
+            colouredBackground={colouredBackground}
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}

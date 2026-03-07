@@ -1,0 +1,19 @@
+@use "../../abstracts/" as *;
+
+.coloured-card,
+.non-coloured-card {
+  padding: 5px 10px;
+  border: 2px solid $primary-color;
+  border-radius: 15px;
+  font-size: $vsmall-font;
+  font-family: $primary-font;
+  width: fit-content;
+}
+
+.coloured-card {
+  background: linear-gradient(to right, #f4b8e1, #f1488e);
+}
+
+.non-coloured-card {
+  background: linear-gradient(to right, #f4e9f1, #f4e4f0, #efb2dc);
+}

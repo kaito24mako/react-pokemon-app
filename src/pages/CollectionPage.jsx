@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import CardList from "../components/features/card/CardList";
 import CardItem from "../components/features/card/CardItem";
+import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
 
 function CollectionPage({
   cardItem,
@@ -15,6 +16,8 @@ function CollectionPage({
   // easier to track than cardItem since cardItem is an array of objects
   const [clickedCard, setClickedCard] = useState(null);
 
+  const [colouredBackground, setColouredBackground] = useState(true);
+
   // open modal when a card is clicked
   function handleClickedCard(card) {
     setClickedCard(card);
@@ -25,12 +28,24 @@ function CollectionPage({
     setClickedCard(null);
   }
 
+  // for toggling between coloured and non-coloured card backgrounds
+  function handleColouredBackground() {
+    setColouredBackground((prev) => !prev);
+  }
+
   return (
     <div className="collectionPage-container">
       <div className="cards-container">
         <div className="title-container-two">
           <p>My Collection</p>
           <span className="counter">{favourites.length} cards</span>
+        </div>
+
+        <div className="coloured-cards-button">
+          <ToggleCardBackground
+            handleColouredBackground={handleColouredBackground}
+            colouredBackground={colouredBackground}
+          />
         </div>
 
         <CardList
@@ -58,6 +73,7 @@ function CollectionPage({
             handleCloseModal={handleCloseModal}
             favourites={favourites}
             toggleFavourite={toggleFavourite}
+            colouredBackground={colouredBackground}
             onClick={(e) => e.stopPropagation()}
           />
         </div>

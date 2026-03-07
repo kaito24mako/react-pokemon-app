@@ -16,6 +16,7 @@ function App() {
   const [search, setSearch] = useState(""); // string of searched card
   const [fetchingCards, setFetchingCards] = useState(false); // loading spinner when data hasn't rendered
 
+  // used Cursor AI to help!
   // 1. calls localStorage only on the first render (mount)
   // 2. getItem returns a string if favourites exists and turns/parses it into an array, otherwise start with an empty array
   const [favourites, setFavourites] = useState(() => {
@@ -38,6 +39,7 @@ function App() {
     setFavourites((prev) => {
       // checks if this card is already in favourites
       const cardExists = prev.some((c) => c.id === card.id);
+      console.log(favourites);
       // if it exists, returns new array with that card removed
       // if it doesn't exist, returns new array with that card added
       if (cardExists) {

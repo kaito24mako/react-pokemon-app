@@ -1,7 +1,10 @@
 @use "./base/base";
 @use "./base/reset";
 
+@use "./components/assets/types";
+
 @use "./components/button/closeBtn";
+@use "./components/button/toggleCardBackground";
 
 @use "./components/card/cardColors";
 @use "./components/card/cardItem";

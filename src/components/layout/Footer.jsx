@@ -1,6 +1,6 @@
-import github from "../../assets/github.png";
-import facebook from "../../assets/facebook.png";
-import instagram from "../../assets/instagram.png";
+import github from "../../assets/socials/github.png";
+import facebook from "../../assets/socials/facebook.png";
+import instagram from "../../assets/socials/instagram.png";
 
 function Footer() {
   return (

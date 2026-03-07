@@ -3,7 +3,7 @@
 .card-item-container {
   display: flex;
   gap: 30px;
-  padding: 40px 40px;
+  padding: 40px 33px 40px 40px;
 
   /* width: 60vw; */
   width: 100%;
@@ -38,27 +38,38 @@
 .left-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .image-details-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
+  font-size: $vsmall-font;
 }
 
 .details-wrapper {
   display: flex;
+  align-items: center;
   gap: 10px;
-  font-size: $vsmall-font;
 }
 
 .favourite-button {
-  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  background-color: $light-red-color;
+  font-family: $primary-font;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .favourite-button:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
+  background-color: $accent-color;
 }
 
 /* RIGHT CONTAINER with card statistics and details */
@@ -73,7 +84,7 @@
   font-size: $vlarge-font;
 }
 
-/* statistics cards */
+/* statistics cards - health, type, weaknesses, retreat */
 
 .stats-container {
   display: flex;
@@ -87,10 +98,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 150px;
+  width: 185px;
   height: 50px;
-  /* width: 100px;
-  height: 80px; */
   padding: 5px 10px;
 
   border-radius: 15px;
@@ -101,6 +110,12 @@
 .stat-title {
   font-weight: 600;
   font-style: italic;
+}
+
+.icon-value-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* abilities */
@@ -120,9 +135,9 @@
 
 .ability-title {
   padding: 0 5px;
-  border: 1px solid rgb(244, 37, 37);
+  border: 1px solid $light-red-color;
   border-radius: 5px;
-  background-color: rgb(244, 37, 37);
+  background-color: $light-red-color;
   font-size: $vsmall-font;
 }
 
@@ -138,23 +153,36 @@
   flex-direction: column;
   gap: 5px;
   padding: 10px;
-  font-size: $small-font;
+  margin-right: 17px;
 
+  font-size: $small-font;
   border-radius: 15px;
   background-color: $grey-color;
 }
 
-.cost-name-wrapper {
+.cost-name-damage-wrapper {
   display: flex;
   justify-content: space-between;
-  /* gap: 10px; */
+  align-items: center;
 }
 
-.attack-cost {
-  font-size: $vsmall-font;
+.cost-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cost-wrapper {
+  display: flex;
+  gap: 3px;
 }
 
 .attack-name {
   font-weight: 600;
   font-style: italic;
+}
+
+.name-damage-wrapper {
+  display: flex;
+  gap: 10px;
 }
