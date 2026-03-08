@@ -9,8 +9,9 @@
   padding: 20px;
   gap: 10px;
 
+  border-top: 3px solid $secondary-color;
   font-size: $small-font;
-  border-top: 3px solid $primary-color;
+  color: $secondary-color;
   background: $secondary-bg-gradient-color;
 }
 

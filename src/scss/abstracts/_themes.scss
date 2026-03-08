@@ -8,3 +8,29 @@
   border: 1px solid black;
   border-radius: 20px;
 }
+
+[data-theme="light"] {
+  --primary-color: #1b1b1b;
+  --secondary-color: #1b1b1b;
+
+  --primary-bg-gradient-color:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
+    #f2d307;
+  --secondary-bg-gradient-color: linear-gradient(to right, #f9d233, #f5c104);
+  --secondary-bg-gradient-filterbar-color: linear-gradient(
+    to bottom,
+    #f9d233,
+    #f5c104
+  );
+}
+
+[data-theme="dark"] {
+  --primary-color: whitesmoke;
+  --secondary-color: #1b1b1b;
+
+  --primary-bg-gradient-color:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
+    #1a1a19;
+  --secondary-bg-gradient-color: #8c0202;
+  --secondary-bg-gradient-filterbar-color: #1a1a19;
+}

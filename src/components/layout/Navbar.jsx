@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
+import ThemeToggle from "../features/theme/ThemeToggle";
+
 import pokeball from "../../assets/pokeball.png";
 
-function Navbar() {
+function Navbar({ handleThemeToggle, isDark }) {
   return (
     <div className="nav-container">
       <Link className="logo-title-button" to="/">
@@ -19,6 +21,7 @@ function Navbar() {
           <Link className="link" to="/party">
             My Party
           </Link>
+          <ThemeToggle handleThemeToggle={handleThemeToggle} isDark={isDark} />
         </div>
       </div>
     </div>

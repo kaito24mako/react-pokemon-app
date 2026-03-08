@@ -3,26 +3,29 @@
 $primary-font: "Grandstander", "Segoe UI", sans-serif;
 $secondary-font: "Segoe UI", Helvetica, Arial, sans-serif;
 
-// $primary-color: #1b1b1b;
-$primary-color: white;
+$primary-color: var(--primary-color, whitesmoke);
+$secondary-color: var(--secondary-color, #1b1b1b);
 $accent-color: #ff0000;
-$white-color: white;
-$grey-color: rgba(255, 255, 255, 0.807);
 $light-accent-color: rgba(255, 0, 0, 0.7);
-/* $blue-color: #3b79ca;
-$brown-color: #975e29;
-$light-brown-color: #975e298b; */
+$grey-color: rgba(255, 255, 255, 0.807);
+$blue-color: rgb(11, 80, 153);
 
 $primary-bg-color: #ffde00;
 $primary-bg-dark-color: #f2d307;
-
-// $primary-bg-gradient-color:
-//   radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
-//   #f2d307;
-$primary-bg-gradient-color:
+$primary-bg-gradient-color: var(
+  --primary-bg-gradient-color,
   radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 60%),
-  #1a1a19;
-$secondary-bg-gradient-color: linear-gradient(to right, #f9d233, #f5c104);
+  #1a1a19
+);
+
+$secondary-bg-gradient-color: var(
+  --secondary-bg-gradient-color,
+  linear-gradient(to right, #f9d233, #f5c104)
+);
+$secondary-bg-gradient-filterbar-color: var(
+  --secondary-bg-gradient-filterbar-color,
+  linear-gradient(to bottom, #f9d233, #f5c104)
+);
 
 $vlarge-font: 3rem;
 $large-font: 1.5rem;
