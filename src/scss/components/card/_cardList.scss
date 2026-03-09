@@ -2,29 +2,25 @@
 
 .cards-grid-container {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
   padding-top: 10px;
-}
 
-.card-wrapper {
-  border: 1px solid transparent;
-  border-radius: 10px;
-  // puts border over card image
-  overflow: hidden;
-  transition: transform 0.1s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  box-shadow: $card-small-shadow;
-}
+  .card-wrapper {
+    // puts border over card image
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: transform 0.1s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: $card-small-shadow;
 
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 280px;
-}
+    &:hover {
+      transform: scale(1.05);
+    }
 
-.card-wrapper:hover {
-  transform: scale(1.05);
+    .card {
+      @extend %card-small;
+    }
+  }
 }

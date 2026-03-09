@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import pokeball from "../assets/pokeball.png";
+import pokeball from "../assets/icons/logo/pokeball.png";
 
 function HomePage() {
   return (
@@ -15,17 +15,17 @@ function HomePage() {
         <div className="featureOne-wrapper">
           <img
             src="https://assets.tcgdex.net/en/xy/xy2/69/high.webp"
-            className="home-card-image card-one"
+            className="card-one"
           />
           <div className="quote-button-wrapper">
             <div className="quote-wrapper">
-              <h3>
+              <h2>
                 Speedy{" "}
                 <strong>
                   <em>searching</em>{" "}
                 </strong>
                 of Pokemon cards
-              </h3>
+              </h2>
               <p>
                 Fly through all PokemonTCG cards with our blazingly fast
                 searching service, and filter cards to your liking!
@@ -40,13 +40,13 @@ function HomePage() {
         <div className="featureTwo-wrapper">
           <div className="quote-button-wrapper">
             <div className="quote-wrapper">
-              <h3>
+              <h2>
                 Easy{" "}
                 <strong>
                   <em>tracking</em>
                 </strong>{" "}
                 of cards and collections
-              </h3>
+              </h2>
               <p>
                 Add your favourite and owned cards to your party to show off to
                 your friends!

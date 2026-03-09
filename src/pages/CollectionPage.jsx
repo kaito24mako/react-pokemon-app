@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import CardList from "../components/features/card/CardList";
 import CollectionList from "../components/features/card/CollectionList";
 import CardItem from "../components/features/card/CardItem";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
@@ -37,7 +36,7 @@ function CollectionPage({
   return (
     <div className="collectionPage-container">
       <div className="cards-container">
-        <div className="title-container-two">
+        <div className="cards-title-container">
           <p>My Party</p>
           <span className="counter">{favourites.length} cards</span>
         </div>

@@ -13,24 +13,24 @@
   font-size: $small-font;
   color: $secondary-color;
   background: $secondary-bg-gradient-color;
-}
 
-.footer-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
+  .footer-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 
-.social-links {
-  display: flex;
-  gap: 10px;
-}
+    .social-links {
+      display: flex;
+      gap: 10px;
 
-.social-image {
-  width: 25px;
-  transition: transform 0.1s ease-in-out;
-}
+      img {
+        width: 25px;
+        transition: transform 0.1s ease-in-out;
 
-.social-image:hover {
-  transform: scale(1.1);
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 }

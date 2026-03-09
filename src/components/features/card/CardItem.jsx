@@ -2,18 +2,18 @@ import { ToastContainer, toast } from "react-toastify";
 
 import CloseBtn from "../button/CloseBtn";
 
-import colorless from "../../../assets/types/colorless.png";
-import darkness from "../../../assets/types/dark.png";
-import dragon from "../../../assets/types/dragon.png";
-import fairy from "../../../assets/types/fairy.png";
-import fighting from "../../../assets/types/fighting.png";
-import fire from "../../../assets/types/fire.png";
-import grass from "../../../assets/types/grass.png";
-import lightning from "../../../assets/types/lightning.png";
-import psychic from "../../../assets/types/psychic.png";
-import steel from "../../../assets/types/steel.png";
-import water from "../../../assets/types/water.png";
-import pokeball from "../../../assets/pokeball.png";
+import colorless from "../../../assets/icons/type/colorless.png";
+import darkness from "../../../assets/icons/type/dark.png";
+import dragon from "../../../assets/icons/type/dragon.png";
+import fairy from "../../../assets/icons/type/fairy.png";
+import fighting from "../../../assets/icons/type/fighting.png";
+import fire from "../../../assets/icons/type/fire.png";
+import grass from "../../../assets/icons/type/grass.png";
+import lightning from "../../../assets/icons/type/lightning.png";
+import psychic from "../../../assets/icons/type/psychic.png";
+import steel from "../../../assets/icons/type/steel.png";
+import water from "../../../assets/icons/type/water.png";
+import pokeball from "../../../assets/icons/logo/pokeball.png";
 
 function CardItem({
   cardItem,
@@ -101,12 +101,12 @@ function CardItem({
               {/* <p className="item-description">{card.description}</p> */}
 
               <div className="stats-container">
-                <div className="health-wrapper stat">
+                <div className="stat">
                   <p className="stat-title">Health</p>
                   <p className="health-stat">♥️ {card.hp} HP</p>
                 </div>
 
-                <div className="type-wrapper stat">
+                <div className="stat">
                   <p className="stat-title">Type</p>
                   {card.types?.map((type, index) => (
                     <img
@@ -117,7 +117,7 @@ function CardItem({
                   ))}
                 </div>
 
-                <div className="weakness-wrapper stat">
+                <div className="stat">
                   <p className="stat-title">Weaknesses</p>
                   {card.weaknesses?.map((weakness, index) => (
                     // when mapping, there must only be one parent element
@@ -132,7 +132,7 @@ function CardItem({
                   ))}
                 </div>
 
-                <div className="retreat-wrapper stat">
+                <div className="stat">
                   <p className="stat-title">Retreat Cost</p>
                   {/* card.retreat = '1', '2', etc., so how to make it the colorless icon? */}
                   <p>{card.retreat}</p>
@@ -148,7 +148,6 @@ function CardItem({
                     </p>
                   ))}
                 </div>
-
                 {card.abilities?.map((ability, index) => (
                   <p className="ability-effect" key={index}>
                     {ability.effect}
@@ -176,8 +175,8 @@ function CardItem({
                     <p className="attack-damage">{attack.damage}</p>
                   </div>
 
-                  <div className="attack-effect-wrapper">
-                    <p>{attack.effect}</p>
+                  <div>
+                    <p className="attack-effect">{attack.effect}</p>
                   </div>
                 </div>
               ))}

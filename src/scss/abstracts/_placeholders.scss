@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+%card-small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 280px;
+}

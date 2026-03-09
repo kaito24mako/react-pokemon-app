@@ -1,6 +1,6 @@
 @use "../abstracts/" as *;
 
-.nav-container {
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,42 +9,41 @@
   background: $secondary-bg-gradient-color;
   font-size: 1.1rem;
   color: $secondary-color;
-}
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  .logo-title-wrapper {
+    display: flex;
+    gap: 5px;
+    font-family: $primary-font;
 
-  .pokeball {
-    position: absolute;
-    width: 50px;
-    opacity: 0.3;
+    h1.logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      img.pokeball {
+        position: absolute;
+        width: 50px;
+        opacity: 0.3;
+      }
+    }
   }
-}
 
-.logo-title-button {
-  display: flex;
-  gap: 5px;
-  font-family: $primary-font;
-}
+  .page-links-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 
-.ui-container,
-.pages-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
+    .link {
+      font-family: $primary-font;
+      font-weight: bold;
+      transition: color 0.1s ease-out;
 
-.link {
-  font-family: $primary-font;
-  font-weight: bold;
-  transition: color 0.1s ease-out;
-}
-
-.link:hover {
-  color: $accent-color;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
 }
 
 @media (max-width: 930px) {

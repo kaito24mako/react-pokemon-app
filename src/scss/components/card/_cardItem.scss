@@ -17,21 +17,20 @@
 
   border-radius: 20px;
   color: $secondary-color;
-}
 
-.item-image {
-  width: 800px;
-  height: 560px;
-  /* object-fit: cover; */
+  .left-container,
+  .right-container {
+    flex: 1;
 
-  border: 1px solid transparent;
-  border-radius: 10px;
-  box-shadow: $card-medium-shadow;
-}
+    .item-image {
+      width: 800px;
+      height: 560px;
 
-.left-container,
-.right-container {
-  flex: 1;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      box-shadow: $card-medium-shadow;
+    }
+  }
 }
 
 /* LEFT CONTAINER with image, favourite button and details */
@@ -40,41 +39,41 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
 
-.image-details-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  font-size: $vsmall-font;
-}
+  .image-details-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: $vsmall-font;
 
-.details-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .favourite-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 6px;
+      border-radius: 5px;
+      background-color: $light-accent-color;
+      font-family: $primary-font;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
 
-.favourite-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 6px;
-  border-radius: 5px;
-  background-color: $light-accent-color;
-  font-family: $primary-font;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
-}
+      &:hover {
+        transform: scale(1.05);
+        background-color: $accent-color;
+      }
 
-.favourite-button:hover {
-  transform: scale(1.05);
-  background-color: $accent-color;
-}
+      img {
+        width: 18px;
+      }
+    }
 
-.favourite-button img {
-  width: 18px;
+    .details-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
 }
 
 /* RIGHT CONTAINER with card statistics and details */
@@ -83,44 +82,44 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
 
-.item-title {
-  font-size: $vlarge-font;
-}
+  h2 {
+    font-size: $vlarge-font;
+  }
 
-/* statistics cards - health, type, weaknesses, retreat */
+  /* statistics cards - health, type, weaknesses, retreat */
 
-.stats-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-  width: 185px;
-  height: 50px;
-  padding: 5px 10px;
+      width: 185px;
+      height: 50px;
+      padding: 5px 10px;
 
-  border-radius: 15px;
-  font-size: $small-font;
-  background-color: $grey-color;
-}
+      border-radius: 15px;
+      font-size: $small-font;
+      background-color: $grey-color;
 
-.stat-title {
-  font-weight: 600;
-  font-style: italic;
-}
+      .stat-title {
+        font-weight: 600;
+        font-style: italic;
+      }
 
-.icon-value-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+      .icon-value-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
 }
 
 /* abilities */
@@ -130,25 +129,25 @@
   flex-direction: column;
   gap: 5px;
   font-size: $small-font;
-}
 
-.icon-title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+  .icon-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
-.ability-title {
-  padding: 0 5px;
-  border: 1px solid $light-accent-color;
-  border-radius: 5px;
-  background-color: $light-accent-color;
-  font-size: $vsmall-font;
-}
+    .ability-title {
+      padding: 0 5px;
+      border: 1px solid $light-accent-color;
+      border-radius: 5px;
+      background-color: $light-accent-color;
+      font-size: $vsmall-font;
+    }
 
-.ability-name {
-  font-weight: 600;
-  font-style: italic;
+    .ability-name {
+      font-weight: 600;
+      font-style: italic;
+    }
+  }
 }
 
 /* attacks */
@@ -163,31 +162,26 @@
   font-size: $small-font;
   border-radius: 15px;
   background-color: $grey-color;
-}
 
-.cost-name-damage-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .cost-name-damage-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.cost-name-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .cost-name-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-.cost-wrapper {
-  display: flex;
-  gap: 3px;
-}
+      .cost-wrapper {
+        display: flex;
+        gap: 3px;
+      }
 
-.attack-name {
-  font-weight: 600;
-  font-style: italic;
-}
-
-.name-damage-wrapper {
-  display: flex;
-  gap: 10px;
+      .attack-name {
+        font-weight: 600;
+        font-style: italic;
+      }
+    }
+  }
 }

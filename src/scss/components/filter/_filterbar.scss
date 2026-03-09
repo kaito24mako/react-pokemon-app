@@ -8,24 +8,24 @@
   border-right: 3px solid $secondary-color;
   background: $secondary-bg-gradient-filterbar-color;
   color: $primary-color;
-}
 
-.filter-container form {
-  width: 180px;
-}
+  form {
+    width: 180px;
+  }
 
-.type-container,
-.variant-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+  form.type-container,
+  form.variant-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
-.input-wrapper {
-  display: flex;
-  gap: 8px;
-}
+    .input-wrapper {
+      display: flex;
+      gap: 8px;
 
-.input-wrapper label {
-  font-size: $small-font;
+      label {
+        font-size: $small-font;
+      }
+    }
+  }
 }

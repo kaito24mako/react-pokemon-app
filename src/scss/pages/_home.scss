@@ -10,25 +10,88 @@
   flex: 1;
   background: $primary-bg-gradient-color;
   color: $primary-color;
-}
 
-.title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-family: $primary-font;
-}
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: $primary-font;
 
-.title-container h1 {
-  font-size: $vlarge-font;
-}
+    .floating-pokeball {
+      position: absolute;
+      width: 120px;
+      opacity: 0.1;
+      animation: float 6s ease infinite;
+    }
 
-.floating-pokeball {
-  position: absolute;
-  width: 120px;
-  opacity: 0.1;
-  animation: float 6s ease infinite;
+    h1 {
+      font-size: $vlarge-font;
+    }
+  }
+
+  .features-container {
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+
+    .featureOne-wrapper,
+    .featureTwo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+
+      img {
+        width: 300px;
+        box-shadow: $card-medium-shadow;
+        transition: transform 0.35s ease;
+        transform-style: preserve-3d;
+
+        &.card-one:hover {
+          transform: perspective(800px) rotateY(12deg) rotateX(6deg) scale(1.05);
+        }
+
+        &.card-two:hover {
+          transform: perspective(800px) rotateY(-12deg) rotateX(6deg)
+            scale(1.05);
+        }
+      }
+
+      .quote-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        max-width: 35dvw;
+        font-family: $primary-font;
+
+        h2 {
+          font-size: 1.8rem;
+          font-weight: 500;
+        }
+
+        p {
+          font-family: $secondary-font;
+          font-weight: 300;
+        }
+      }
+
+      .start-button {
+        padding: 15px;
+        border-radius: 25px;
+        background-color: $light-accent-color;
+        box-shadow: 0 0 2px $light-accent-color;
+        font-family: $primary-font;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: $accent-color;
+        }
+      }
+    }
+  }
 }
 
 @keyframes float {
@@ -41,66 +104,4 @@
   100% {
     transform: translateY(0px);
   }
-}
-
-.features-container {
-  display: flex;
-  flex-direction: column;
-  width: 100dvw;
-}
-
-.featureOne-wrapper,
-.featureTwo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding: 20px;
-}
-
-.home-card-image {
-  width: 300px;
-  box-shadow: $card-medium-shadow;
-  transition: transform 0.35s ease;
-  transform-style: preserve-3d;
-}
-
-.card-one:hover {
-  transform: perspective(800px) rotateY(12deg) rotateX(6deg) scale(1.05);
-}
-
-.card-two:hover {
-  transform: perspective(800px) rotateY(-12deg) rotateX(6deg) scale(1.05);
-}
-
-.quote-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  max-width: 35dvw;
-  font-family: $primary-font;
-}
-
-.quote-wrapper h3 {
-  font-size: 1.8rem;
-  font-weight: 500;
-}
-
-.quote-wrapper p {
-  font-family: $secondary-font;
-  font-weight: 300;
-}
-
-.start-button {
-  padding: 15px;
-  border-radius: 25px;
-  background-color: $light-accent-color;
-  box-shadow: 0 0 2px $light-accent-color;
-  font-family: $primary-font;
-  transition: background-color 0.2s ease;
-}
-
-.start-button:hover {
-  background-color: $accent-color;
 }

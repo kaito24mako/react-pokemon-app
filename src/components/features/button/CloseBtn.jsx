@@ -1,4 +1,4 @@
-import close from "../../../assets/close.png";
+import close from "../../../assets/icons/button/close.png";
 
 function CloseBtn({ handleCloseModal }) {
   return (

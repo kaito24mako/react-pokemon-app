@@ -44,7 +44,7 @@ function CardsPage({
       <Filterbar />
 
       <div className="cards-container">
-        <div className="title-container-two">
+        <div className="cards-title-container">
           <p>Cards List</p>
           <span className="counter">{cards.length} cards</span>
         </div>
