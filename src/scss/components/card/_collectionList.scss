@@ -1,0 +1,23 @@
+@use "../../abstracts/" as *;
+
+.add-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 280px;
+
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: $card-small-shadow;
+  transition: transform 0.1s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  p {
+    font-family: $primary-font;
+    font-size: 1rem;
+  }
+}

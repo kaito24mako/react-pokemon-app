@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import { SyncLoader } from "react-spinners";
+
+import Plus from "../../icons/Plus";
 
 function CollectionList({
   cards,
@@ -27,6 +30,12 @@ function CollectionList({
           </div>
         ))
       )}
+      <Link to="/cards">
+        <button className="add-card-wrapper card">
+          <p className="title">Add Card</p>
+          <Plus className="plus" />
+        </button>
+      </Link>
     </div>
   );
 }

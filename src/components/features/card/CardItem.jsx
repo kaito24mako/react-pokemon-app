@@ -53,7 +53,7 @@ function CardItem({
     if (inCollection) {
       toast(`${card.name} removed from your party`);
     } else {
-      toast(`${card.name} added your party!`);
+      toast(`${card.name} added to your party!`);
     }
   }
 

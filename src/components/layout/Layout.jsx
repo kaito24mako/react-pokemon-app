@@ -9,7 +9,6 @@ function Layout() {
   const [isDark, setIsDark] = useState(false);
 
   function handleThemeToggle() {
-    // toggles the value of the current state
     setIsDark((prev) => !prev);
   }
 

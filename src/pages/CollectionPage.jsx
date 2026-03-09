@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import CardList from "../components/features/card/CardList";
+import CollectionList from "../components/features/card/CollectionList";
 import CardItem from "../components/features/card/CardItem";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
 
@@ -48,7 +49,7 @@ function CollectionPage({
           />
         </div>
 
-        <CardList
+        <CollectionList
           // render the favourites array
           // use the same prop name as in CardsPage since both pages require the same functionalities (e.g., fetchCardById, opening modal)
           // props never conflict since they are scoped to each component instance - CollectionPage renders a CardList instance with its props, not with CardPages' props
