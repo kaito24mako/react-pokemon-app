@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SyncLoader } from "react-spinners";
+import { playClickSound } from "../../audio/click";
 
 import Plus from "../../icons/Plus";
 
@@ -20,6 +21,7 @@ function CollectionList({
             className="card-wrapper"
             key={index}
             onClick={() => {
+              playClickSound();
               // get id for detailed card data
               fetchCardById(card.id);
               // tells CardsPage which card was clicked to open modal
@@ -31,7 +33,7 @@ function CollectionList({
         ))
       )}
       <Link to="/cards">
-        <button className="add-card-wrapper card">
+        <button className="add-card-wrapper card" onClick={playClickSound}>
           <p className="title">Add Card</p>
           <Plus className="plus" />
         </button>

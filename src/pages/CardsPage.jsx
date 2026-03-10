@@ -6,6 +6,8 @@ import Filterbar from "../components/features/filter/Filterbar";
 import CardList from "../components/features/card/CardList";
 import CardItem from "../components/features/card/CardItem";
 
+import pokeball from "../assets/icons/logo/pokeball.png";
+
 function CardsPage({
   cards,
   search,
@@ -72,7 +74,7 @@ function CardsPage({
         />
 
         <p className={`quote ${!cards.length > 0 ? "" : "fade-out"}`}>
-          Let's start searching! 😆
+          Let's start searching! <img src={pokeball} />
         </p>
       </div>
 

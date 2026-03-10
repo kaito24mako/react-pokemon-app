@@ -5,7 +5,6 @@
   gap: 30px;
   padding: 40px 33px 40px 40px;
 
-  /* width: 60vw; */
   width: 100%;
   max-width: 900px;
   min-height: 80vh;
@@ -148,6 +147,10 @@
       font-style: italic;
     }
   }
+
+  .ability-effect {
+    opacity: $medium-opacity;
+  }
 }
 
 /* attacks */
@@ -183,5 +186,9 @@
         font-style: italic;
       }
     }
+  }
+
+  .attack-effect {
+    opacity: $medium-opacity;
   }
 }

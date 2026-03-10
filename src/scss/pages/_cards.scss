@@ -46,8 +46,13 @@
     }
 
     .quote {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: auto;
       padding-bottom: 150px;
+      gap: 10px;
+
       font-size: $large-font;
       font-weight: 400;
       font-family: $primary-font;
@@ -56,6 +61,11 @@
 
       &.fade-out {
         opacity: 0;
+      }
+
+      img {
+        width: 32px;
+        padding-bottom: 5px;
       }
     }
   }

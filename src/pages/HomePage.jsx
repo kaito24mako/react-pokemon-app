@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { playClickSound } from "../components/audio/click";
 
 import pokeball from "../assets/icons/logo/pokeball.png";
 
@@ -10,8 +11,8 @@ function HomePage() {
         <h1>Wanna Search 'Em All?</h1>
         <p>Then let's get to work, trainer!</p>
       </div>
+
       <div className="features-container">
-        {/* Feature 1 */}
         <div className="featureOne-wrapper">
           <img
             src="https://assets.tcgdex.net/en/xy/xy2/69/high.webp"
@@ -31,12 +32,12 @@ function HomePage() {
                 searching service, and filter cards to your liking!
               </p>
             </div>
-            <Link className="start-button" to="/cards">
+            <Link className="start-button" to="/cards" onClick={playClickSound}>
               Start Searching!
             </Link>
           </div>
         </div>
-        {/* Feature 2 */}
+
         <div className="featureTwo-wrapper">
           <div className="quote-button-wrapper">
             <div className="quote-wrapper">
@@ -52,8 +53,8 @@ function HomePage() {
                 your friends!
               </p>
             </div>
-            <Link className="start-button" to="/party">
-              Your Party!
+            <Link className="start-button" to="/party" onClick={playClickSound}>
+              View Your Party!
             </Link>
           </div>
           <img

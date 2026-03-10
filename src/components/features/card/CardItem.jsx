@@ -1,4 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
+import { playAddSound } from "../../audio/add";
+import { playRemoveSound } from "../../audio/remove";
 
 import CloseBtn from "../button/CloseBtn";
 
@@ -51,8 +53,10 @@ function CardItem({
     const inCollection = favourites.some((c) => c.id === card.id);
 
     if (inCollection) {
+      playRemoveSound();
       toast(`${card.name} removed from your party`);
     } else {
+      playAddSound();
       toast(`${card.name} added to your party!`);
     }
   }

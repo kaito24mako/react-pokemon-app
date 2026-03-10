@@ -28,6 +28,10 @@
     h1 {
       font-size: $vlarge-font;
     }
+
+    p {
+      opacity: $large-opacity;
+    }
   }
 
   .features-container {
@@ -74,7 +78,7 @@
 
         p {
           font-family: $secondary-font;
-          font-weight: 300;
+          opacity: $large-opacity;
         }
       }
 

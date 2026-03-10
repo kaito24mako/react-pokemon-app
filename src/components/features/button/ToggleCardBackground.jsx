@@ -1,3 +1,5 @@
+import { playSwitchSound } from "../../audio/switch";
+
 function ToggleCardBackground({
   handleColouredBackground,
   colouredBackground,
@@ -5,7 +7,10 @@ function ToggleCardBackground({
   return (
     <button
       className={colouredBackground ? "coloured-card" : "non-coloured-card"}
-      onClick={handleColouredBackground}
+      onClick={() => {
+        playSwitchSound();
+        handleColouredBackground();
+      }}
     >
       {colouredBackground ? "Coloured Cards" : "Non-coloured Cards"}
     </button>

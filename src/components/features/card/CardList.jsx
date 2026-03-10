@@ -1,4 +1,5 @@
 import { SyncLoader } from "react-spinners";
+import { playClickSound } from "../../audio/click.js";
 
 function CardList({ cards, fetchingCards, fetchCardById, handleClickedCard }) {
   return (
@@ -12,6 +13,7 @@ function CardList({ cards, fetchingCards, fetchCardById, handleClickedCard }) {
             className="card-wrapper"
             key={index}
             onClick={() => {
+              playClickSound();
               // get id for detailed card data
               fetchCardById(card.id);
               // tells CardsPage which card was clicked to open modal

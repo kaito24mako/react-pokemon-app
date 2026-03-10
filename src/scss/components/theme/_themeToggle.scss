@@ -1,12 +1,12 @@
 @use "../../abstracts/" as *;
 
 .theme-buttons {
-  padding: 8px;
-  border: 2px solid $secondary-color;
+  padding: 10px;
+  border: 1px solid transparent;
   border-radius: 50%;
-  // background: transparent;
-  // backdrop-filter: blur(10px);
   transition: transform 0.6s ease;
+  box-shadow: $button-shadow;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .rotate-dark {
