@@ -43,11 +43,11 @@ function CardsPage({
 
   return (
     <div className="cardsPage-container">
-      <Filterbar />
+      {/* <Filterbar /> */}
 
       <div className="cards-container">
         <div className="cards-title-container">
-          <p>Cards List</p>
+          <h1>Cards</h1>
           <span className="counter">{cards.length} cards</span>
         </div>
 
@@ -57,8 +57,6 @@ function CardsPage({
             handleSearch={handleSearch}
             handleSubmitSearch={handleSubmitSearch}
           />
-          <button className="dropdown-button">Sort by number ⤵︎</button>
-          <button className="order-button">⇡ Ascending Order</button>
           <ToggleCardBackground
             handleColouredBackground={handleColouredBackground}
             colouredBackground={colouredBackground}

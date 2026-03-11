@@ -14,7 +14,7 @@ function CollectionList({
     <div className="cards-grid-container">
       {/* if loading... render spinner, or else render cards */}
       {fetchingCards ? (
-        <SyncLoader color="#1B1B1B" margin={3} size={9} />
+        <SyncLoader color="red" margin={3} size={9} />
       ) : (
         cards?.map((card, index) => (
           <div

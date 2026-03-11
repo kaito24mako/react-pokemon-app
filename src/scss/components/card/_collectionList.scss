@@ -3,6 +3,8 @@
 .add-card-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   height: 280px;
 
@@ -17,10 +19,18 @@
 
   p {
     font-family: $primary-font;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
-.card {
+img.card {
   @extend %card-small;
+}
+
+@media (max-width: 690px) {
+  .add-card-wrapper,
+  img.card {
+    width: 180px !important;
+    height: 260px !important;
+  }
 }

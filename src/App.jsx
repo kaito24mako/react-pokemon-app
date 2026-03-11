@@ -18,7 +18,7 @@ function App() {
 
   // used Cursor AI to help!
   // 1. calls localStorage only on the first render (mount)
-  // 2. getItem returns a string if favourites exists and turns/parses it into an array, otherwise start with an empty array
+  // 2. getItem returns a string if favourites exists and turns/parses it into a JSON array, otherwise start with an empty array
   const [favourites, setFavourites] = useState(() => {
     const saved = localStorage.getItem("favourites");
     return saved ? JSON.parse(saved) : [];

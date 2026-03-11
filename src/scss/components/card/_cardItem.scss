@@ -1,5 +1,37 @@
 @use "../../abstracts/" as *;
 
+@media (max-width: 500px) {
+  .card-item-container {
+    flex-direction: column;
+    max-height: 100vh;
+    height: 90%;
+    overflow-y: scroll;
+
+    .left-container {
+      padding-top: 50px;
+      img.item-image {
+        height: 510px !important;
+      }
+
+      .details-wrapper {
+        font-size: 0.6rem;
+      }
+    }
+
+    .right-container {
+      h2 {
+        position: absolute;
+        bottom: 81vh;
+      }
+
+      .stats-container .stat {
+        width: 165px;
+        height: 50px;
+      }
+    }
+  }
+}
+
 .card-item-container {
   display: flex;
   gap: 30px;
@@ -21,7 +53,7 @@
   .right-container {
     flex: 1;
 
-    .item-image {
+    img.item-image {
       width: 800px;
       height: 560px;
 

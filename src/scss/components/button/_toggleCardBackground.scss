@@ -3,17 +3,16 @@
 .coloured-card,
 .non-coloured-card {
   padding: 5px 10px;
-  border: 2px solid $primary-color;
-  border-radius: 15px;
+  border-radius: 12px;
   font-size: $vsmall-font;
   font-family: $primary-font;
-  width: fit-content;
   color: black;
-  border: 1px solid transparent;
+  box-shadow: $button-small-shadow;
 }
 
 .coloured-card {
   background: linear-gradient(to right, #f4b8e1, #f1488e);
+  border: 1px solid linear-gradient(to right, #f4b8e1, #f1488e);
 }
 
 .non-coloured-card {

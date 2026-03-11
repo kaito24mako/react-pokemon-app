@@ -19,8 +19,15 @@
       transform: scale(1.05);
     }
 
-    .card {
+    img.card {
       @extend %card-small;
     }
+  }
+}
+
+@media (max-width: 450px) {
+  img.card {
+    width: 180px !important;
+    height: 260px !important;
   }
 }

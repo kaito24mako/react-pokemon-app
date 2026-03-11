@@ -4,12 +4,19 @@
   position: absolute;
   padding: 3px;
   top: 2%;
-  left: 95%;
+  right: 2%;
   z-index: 2;
   border-radius: 10px;
   transition: transform 0.2s ease;
 
   &:hover {
     transform: scale(1.2);
+  }
+}
+
+@media (max-width: 500px) {
+  .close-modal-button {
+    top: 2%;
+    right: 4%;
   }
 }

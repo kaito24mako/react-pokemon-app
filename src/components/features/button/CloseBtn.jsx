@@ -4,7 +4,6 @@ import { playClickSound } from "../../audio/click";
 
 function CloseBtn({ handleCloseModal }) {
   return (
-    // on click, close modal
     <button
       className="close-modal-button"
       onClick={() => {

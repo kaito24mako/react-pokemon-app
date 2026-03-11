@@ -72,7 +72,7 @@
         font-family: $primary-font;
 
         h2 {
-          font-size: 1.8rem;
+          font-size: clamp(1.2rem, 4vw, 1.8rem);
           font-weight: 500;
         }
 
@@ -107,5 +107,33 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+@media (max-width: 690px) {
+  .home-container {
+    padding-bottom: 150px;
+
+    .features-container {
+      gap: 250px;
+      margin-top: 100px;
+
+      .featureOne-wrapper,
+      .featureTwo-wrapper {
+        img {
+          position: absolute;
+          opacity: 0.35;
+        }
+
+        .quote-button-wrapper {
+          z-index: 10;
+          opacity: 1;
+
+          .quote-wrapper {
+            max-width: 50dvw;
+          }
+        }
+      }
+    }
   }
 }
