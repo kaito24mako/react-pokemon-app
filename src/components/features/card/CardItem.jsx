@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { playAddSound } from "../../audio/add";
 import { playRemoveSound } from "../../audio/remove";
@@ -39,6 +40,8 @@ function CardItem({
     water,
   };
 
+  const [shiningCard, setShiningCard] = useState(false);
+
   // useState only stores the state locally for one mount/render!
   // so useState won't work when switching between the cards and collection page
   // instead, use array.some() method
@@ -75,12 +78,24 @@ function CardItem({
           <div
             className={`card-item-container ${colouredBackground ? card.types?.[0].toLowerCase() : ""}`}
             key={index}
+            onClick={(e) => e.stopPropagation()}
           >
             <CloseBtn closeModal={closeModal} />
 
             <div className="left-container">
-              <div className="card-wrapper">
-                <img src={card.image} className="card-image" alt={card.name} />
+              <div
+                className={`card-wrapper ${shiningCard ? "shining-card" : ""}`}
+              >
+                <img
+                  src={card.image}
+                  className="card-image"
+                  // to allow for the animation to play on every click
+                  onClick={() => {
+                    setShiningCard(false);
+                    setTimeout(() => setShiningCard(true), 10);
+                  }}
+                  alt={card.name}
+                />
               </div>
 
               <div className="image-details-wrapper">
@@ -110,100 +125,107 @@ function CardItem({
               <h2 className="item-title">{card.name}</h2>
 
               <div className="stats-container">
-                <div className="stat">
-                  <p className="stat-title">Health</p>
-                  {card.hp ? (
-                    <p className="health-stat">♥️ {card.hp} HP</p>
-                  ) : (
-                    <p>?</p>
-                  )}
-                </div>
+                <h3>General</h3>
+                <div className="stats-wrapper">
+                  <div className="stat">
+                    <p className="stat-title">Health</p>
+                    {card.hp ? (
+                      <p className="health-stat">♥️ {card.hp} HP</p>
+                    ) : (
+                      <p>?</p>
+                    )}
+                  </div>
 
-                <div className="stat">
-                  <p className="stat-title">Type</p>
-                  {card.types ? (
-                    card.types.map((type, index) => (
-                      <img
-                        className="type-icon"
-                        key={index}
-                        src={typeIcons[type.toLowerCase()]}
-                      />
-                    ))
-                  ) : (
-                    <p>?</p>
-                  )}
-                </div>
-
-                <div className="stat">
-                  <p className="stat-title">Weaknesses</p>
-                  {card.weaknesses ? (
-                    card.weaknesses.map((weakness, index) => (
-                      // when mapping, there must only be one parent element
-                      <div className="icon-value-wrapper">
+                  <div className="stat">
+                    <p className="stat-title">Type</p>
+                    {card.types ? (
+                      card.types.map((type, index) => (
                         <img
                           className="type-icon"
                           key={index}
-                          src={typeIcons[weakness.type.toLowerCase()]}
+                          src={typeIcons[type.toLowerCase()]}
                         />
-                        <p>{weakness.value}</p>
-                      </div>
-                    ))
-                  ) : (
-                    <p>?</p>
-                  )}
-                </div>
+                      ))
+                    ) : (
+                      <p>?</p>
+                    )}
+                  </div>
 
-                <div className="stat">
-                  <p className="stat-title">Retreat Cost</p>
-                  {card.retreat ? <p>{card.retreat}</p> : <p>?</p>}
+                  <div className="stat">
+                    <p className="stat-title">Weaknesses</p>
+                    {card.weaknesses ? (
+                      card.weaknesses.map((weakness, index) => (
+                        // when mapping, there must only be one parent element
+                        <div className="icon-value-wrapper">
+                          <img
+                            className="type-icon"
+                            key={index}
+                            src={typeIcons[weakness.type.toLowerCase()]}
+                          />
+                          <p>{weakness.value}</p>
+                        </div>
+                      ))
+                    ) : (
+                      <p>?</p>
+                    )}
+                  </div>
+
+                  <div className="stat">
+                    <p className="stat-title">Retreat Cost</p>
+                    {card.retreat ? <p>{card.retreat}</p> : <p>?</p>}
+                  </div>
                 </div>
               </div>
 
               <div className="ability-container">
-                <div className="icon-title-wrapper">
-                  <p className="ability-title">Ability</p>
+                <h3>Ability</h3>
+                <div className="ability-wrapper">
                   {card.abilities?.map((ability, index) => (
                     <p className="ability-name" key={index}>
                       {ability.name}
                     </p>
                   ))}
+                  {/* </div> */}
+                  {card.abilities ? (
+                    card.abilities.map((ability, index) => (
+                      <p className="ability-effect" key={index}>
+                        {ability.effect}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="ability-effect">None</p>
+                  )}
                 </div>
-                {card.abilities ? (
-                  card.abilities.map((ability, index) => (
-                    <p className="ability-effect" key={index}>
-                      {ability.effect}
-                    </p>
-                  ))
-                ) : (
-                  <p className="ability-effect">None</p>
-                )}
               </div>
 
-              {card.attacks?.map((attack, index) => (
-                <div className="attack-container" key={index}>
-                  <div className="cost-name-damage-wrapper">
-                    <div className="cost-name-wrapper">
-                      <div className="cost-wrapper">
-                        {attack.cost?.map((energy, i) => (
-                          <img
-                            className="attack-cost type-icon"
-                            key={i}
-                            src={typeIcons[energy.toLowerCase()]}
-                          />
-                        ))}
+              <div className="attack-container">
+                <h3>Attacks</h3>
+                {card.attacks?.map((attack, index) => (
+                  <div className="attack-wrapper" key={index}>
+                    <div className="cost-name-damage-wrapper">
+                      <div className="cost-name-wrapper">
+                        <div className="cost-wrapper">
+                          {attack.cost?.map((energy, i) => (
+                            <img
+                              className="attack-cost type-icon"
+                              key={i}
+                              src={typeIcons[energy.toLowerCase()]}
+                            />
+                          ))}
+                        </div>
+
+                        <p className="attack-name">{attack.name}</p>
                       </div>
 
-                      <p className="attack-name">{attack.name}</p>
+                      <p className="attack-damage">{attack.damage}</p>
                     </div>
 
-                    <p className="attack-damage">{attack.damage}</p>
+                    <div>
+                      <p className="attack-effect">{attack.effect}</p>
+                    </div>
                   </div>
-
-                  <div>
-                    <p className="attack-effect">{attack.effect}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         ))}

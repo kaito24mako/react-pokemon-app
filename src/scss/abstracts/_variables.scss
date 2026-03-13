@@ -28,7 +28,6 @@ $secondary-bg-gradient-filterbar-color: var(
 );
 
 $vlarge-font: clamp(2rem, 5vw, 3rem);
-// font-size: clamp(1rem, 4vw, 1.8rem);
 $large-font: 1.5rem;
 $medium-font: clamp(0.9rem, 3vw, 1rem);
 $small-font: 0.9rem;
@@ -40,7 +39,7 @@ $small-gap: 10px;
 $vsmall-gap: 5px;
 
 $card-large-shadow: 0 10px 16px rgba(0, 0, 0, 0.3);
-$card-medium-shadow: 1px 4px 16px rgba(0, 0, 0, 0.15);
+$card-medium-shadow: -5px 5px 16px rgba(0, 0, 0, 0.15);
 $card-small-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1);
 $button-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 $button-small-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

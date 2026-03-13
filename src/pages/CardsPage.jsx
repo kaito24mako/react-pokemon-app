@@ -78,7 +78,6 @@ function CardsPage({
             favourites={favourites}
             toggleFavourite={toggleFavourite}
             colouredBackground={colouredBackground}
-            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}

@@ -49,17 +49,20 @@
 
       img {
         width: 300px;
+        border-radius: 15px;
         box-shadow: $card-medium-shadow;
         transition: transform 0.35s ease;
         transform-style: preserve-3d;
 
-        &.card-one:hover {
+        &.card-one {
           transform: perspective(800px) rotateY(12deg) rotateX(6deg) scale(1.05);
+          box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.4);
         }
 
-        &.card-two:hover {
+        &.card-two {
           transform: perspective(800px) rotateY(-12deg) rotateX(6deg)
             scale(1.05);
+          box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
         }
       }
 

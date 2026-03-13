@@ -27,29 +27,34 @@
       overflow: hidden;
       border-radius: 20px;
       box-shadow: $card-medium-shadow;
+      transform-style: preserve-3d;
+      // transition:
+      //   transform 0.3s ease,
+      //   box-shadow 0.4s ease;
 
-      &::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -100%;
-        width: 60%;
-        height: 200%;
-        background: linear-gradient(
-          120deg,
-          transparent,
-          rgba(255, 255, 255, 0.4),
-          transparent
-        );
-        transform: rotate(25deg);
-        animation: shine 0.7s 1.5s ease forwards;
-      }
+      transform: perspective(1200px) rotateY(12deg) rotateX(3deg) scale(1.01);
+      box-shadow: -9px 7px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .shining-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 60%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      transform: rotate(25deg);
+      animation: shine 0.7s ease forwards;
 
       img.card-image {
         width: 800px;
         height: 560px;
-
-        border: 1px solid transparent;
         border-radius: 10px;
       }
     }
@@ -70,7 +75,7 @@
 .left-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
 
   .image-details-wrapper {
     display: flex;
@@ -114,41 +119,54 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  // height: 70dvh;
+  // overflow-y: scroll;
 
   h2 {
     font-size: $vlarge-font;
+  }
+
+  h3 {
+    font-size: $large-font;
   }
 
   /* statistics cards - health, type, weaknesses, retreat */
 
   .stats-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
 
-    .stat {
+    .stats-wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
 
-      width: 185px;
-      height: 50px;
-      padding: 5px 10px;
-
-      border-radius: 15px;
-      font-size: $small-font;
-      background-color: $grey-color;
-
-      .stat-title {
-        font-weight: 600;
-        font-style: italic;
-      }
-
-      .icon-value-wrapper {
+      .stat {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 5px;
+        justify-content: center;
+
+        width: 48.5%;
+        height: 50px;
+        padding: 5px 10px;
+
+        border-radius: 15px;
+        font-size: $small-font;
+        background-color: $grey-color;
+
+        .stat-title {
+          font-weight: 600;
+          font-style: italic;
+        }
+
+        .icon-value-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
       }
     }
   }
@@ -160,30 +178,22 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  font-size: $small-font;
 
-  .icon-title-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    .ability-title {
-      padding: 0 5px;
-      border: 1px solid $light-accent-color;
-      border-radius: 5px;
-      background-color: $light-accent-color;
-      font-size: $vsmall-font;
-    }
+  .ability-wrapper {
+    font-size: $small-font;
+    border-radius: 15px;
+    background-color: $grey-color;
+    padding: 10px;
+    width: 100%;
 
     .ability-name {
       font-weight: 600;
       font-style: italic;
     }
-  }
 
-  .ability-effect {
-    opacity: $medium-opacity;
-    padding-left: 5px;
+    .ability-effect {
+      opacity: $medium-opacity;
+    }
   }
 }
 
@@ -193,37 +203,43 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 10px;
-  margin-right: 16px;
 
-  font-size: $small-font;
-  border-radius: 15px;
-  background-color: $grey-color;
-
-  .cost-name-damage-wrapper {
+  .attack-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px;
+    width: 100%;
 
-    .cost-name-wrapper {
+    font-size: $small-font;
+    border-radius: 15px;
+    background-color: $grey-color;
+
+    .cost-name-damage-wrapper {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
 
-      .cost-wrapper {
+      .cost-name-wrapper {
         display: flex;
-        gap: 3px;
-      }
+        align-items: center;
+        gap: 10px;
 
-      .attack-name {
-        font-weight: 600;
-        font-style: italic;
+        .cost-wrapper {
+          display: flex;
+          gap: 3px;
+        }
+
+        .attack-name {
+          font-weight: 600;
+          font-style: italic;
+        }
       }
     }
-  }
 
-  .attack-effect {
-    opacity: $medium-opacity;
+    .attack-effect {
+      opacity: $medium-opacity;
+    }
   }
 }
 
@@ -246,14 +262,12 @@
     }
 
     .right-container {
+      // overflow-y: scroll;
+      // height: 100%;
+
       h2 {
         position: absolute;
         bottom: 81vh;
-      }
-
-      .stats-container .stat {
-        width: 165px;
-        height: 50px;
       }
     }
   }
