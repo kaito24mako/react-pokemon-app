@@ -1,37 +1,26 @@
 import { Link } from "react-router-dom";
-import { SyncLoader } from "react-spinners";
 import { playClickSound } from "../../audio/click";
 
 import Plus from "../../icons/Plus";
 
-function CollectionList({
-  cards,
-  fetchingCards,
-  fetchCardById,
-  handleClickedCard,
-}) {
+function CollectionList({ cards, fetchCardById, showClickedCard }) {
   return (
     <div className="cards-grid-container">
-      {/* if loading... render spinner, or else render cards */}
-      {fetchingCards ? (
-        <SyncLoader color="red" margin={3} size={9} />
-      ) : (
-        cards?.map((card, index) => (
-          <div
-            className="card-wrapper"
-            key={index}
-            onClick={() => {
-              playClickSound();
-              // get id for detailed card data
-              fetchCardById(card.id);
-              // tells CardsPage which card was clicked to open modal
-              handleClickedCard(card);
-            }}
-          >
-            <img className="card" src={card.image} alt={card.name} />
-          </div>
-        ))
-      )}
+      {cards?.map((card, index) => (
+        <div
+          className="card-wrapper"
+          key={index}
+          onClick={() => {
+            playClickSound();
+            // get id for detailed card data
+            fetchCardById(card.id);
+            // open the modal when the card is clicked
+            showClickedCard(card);
+          }}
+        >
+          <img className="card" src={card.image} alt={card.name} />
+        </div>
+      ))}
       <Link to="/cards">
         <button className="add-card-wrapper card" onClick={playClickSound}>
           <p className="title">Add Card</p>

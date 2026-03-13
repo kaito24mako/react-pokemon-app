@@ -5,31 +5,31 @@ import CardItem from "../components/features/card/CardItem";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
 
 function CollectionPage({
-  cardItem,
-  setCardItem,
+  detailedCard,
+  setDetailedCard,
   fetchingCards,
   fetchCardById,
   favourites,
   toggleFavourite,
 }) {
   // to track if a card was clicked to open modal
-  // easier to track than cardItem since cardItem is an array of objects
+  // easier to track than detailedCard since detailedCard is an array of objects
   const [clickedCard, setClickedCard] = useState(null);
 
   const [colouredBackground, setColouredBackground] = useState(true);
 
   // open modal when a card is clicked
-  function handleClickedCard(card) {
+  function showClickedCard(card) {
     setClickedCard(card);
   }
 
   // close modal
-  function handleCloseModal() {
+  function closeModal() {
     setClickedCard(null);
   }
 
   // for toggling between coloured and non-coloured card backgrounds
-  function handleColouredBackground() {
+  function toggleColouredCardBg() {
     setColouredBackground((prev) => !prev);
   }
 
@@ -43,7 +43,7 @@ function CollectionPage({
 
         <div className="coloured-cards-button">
           <ToggleCardBackground
-            handleColouredBackground={handleColouredBackground}
+            toggleColouredCardBg={toggleColouredCardBg}
             colouredBackground={colouredBackground}
           />
         </div>
@@ -55,7 +55,7 @@ function CollectionPage({
           cards={favourites}
           fetchingCards={fetchingCards}
           fetchCardById={fetchCardById}
-          handleClickedCard={handleClickedCard}
+          showClickedCard={showClickedCard}
         />
 
         <p className={`quote ${!favourites.length > 0 ? "" : "fade-out"}`}>
@@ -66,11 +66,11 @@ function CollectionPage({
       {/* MODAL - CARD ITEM */}
       {/* only render modal when a card is clicked */}
       {clickedCard && (
-        <div className="modal-backdrop" onClick={handleCloseModal}>
+        <div className="modal-backdrop" onClick={closeModal}>
           <CardItem
-            cardItem={cardItem}
-            setCardItem={setCardItem}
-            handleCloseModal={handleCloseModal}
+            detailedCard={detailedCard}
+            setDetailedCard={setDetailedCard}
+            closeModal={closeModal}
             favourites={favourites}
             toggleFavourite={toggleFavourite}
             colouredBackground={colouredBackground}

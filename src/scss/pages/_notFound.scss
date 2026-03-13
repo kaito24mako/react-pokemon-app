@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.notFound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding-bottom: 250px;
+  background: $primary-bg-gradient-color;
+
+  h2 {
+    font-size: $large-font;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: $vlarge-font;
+    font-weight: 400;
+  }
+
+  button {
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 25px;
+    background-color: $light-accent-color;
+    box-shadow: 0 0 2px $light-accent-color;
+    font-family: $primary-font;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+}

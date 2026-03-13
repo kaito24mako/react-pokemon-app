@@ -12,9 +12,10 @@ import CollectionPage from "./pages/CollectionPage";
 
 function App() {
   const [cards, setCards] = useState([]); // for list of cards
-  const [cardItem, setCardItem] = useState([]); // for single card item
+  const [detailedCard, setDetailedCard] = useState([]); // for single card item
   const [search, setSearch] = useState(""); // string of searched card
   const [fetchingCards, setFetchingCards] = useState(false); // loading spinner when data hasn't rendered
+  const [clickedCard, setClickedCard] = useState(); // to track if a card was clicked
 
   // used Cursor AI to help!
   // 1. calls localStorage only on the first render (mount)
@@ -34,7 +35,7 @@ function App() {
   });
 
   // 4. adds or removes the card from the favourites array
-  // card is from CardItem.jsx, in which the clicked card is mapped over to show its details
+  // card is from detailedCard.jsx, in which the clicked card is mapped over to show its details
   function toggleFavourite(card) {
     setFavourites((prev) => {
       // checks if this card is already in favourites
@@ -91,8 +92,8 @@ function App() {
         image: `${data.image}/high.webp`,
       };
 
-      setCardItem([editedCard]);
       console.log(editedCard);
+      setDetailedCard([editedCard]);
     } catch (error) {
       console.error("Error fetching card details:", error);
     }
@@ -103,9 +104,13 @@ function App() {
     setSearch(e.target.value);
   }
 
-  function handleSubmitSearch(e) {
-    e.preventDefault();
-    fetchCardsByName();
+  function handleSubmitSearch(trimmed) {
+    fetchCardsByName(trimmed);
+  }
+
+  // open modal when a card is clicked
+  function showClickedCard(card) {
+    setClickedCard(card);
   }
 
   return (
@@ -121,14 +126,17 @@ function App() {
             <CardsPage
               cards={cards}
               search={search}
-              cardItem={cardItem}
+              detailedCard={detailedCard}
               handleSearch={handleSearch}
               handleSubmitSearch={handleSubmitSearch}
               fetchingCards={fetchingCards}
               fetchCardById={fetchCardById}
-              setCardItem={setCardItem}
+              setDetailedCard={setDetailedCard}
               favourites={favourites}
               toggleFavourite={toggleFavourite}
+              clickedCard={clickedCard}
+              setClickedCard={setClickedCard}
+              showClickedCard={showClickedCard}
             />
           }
         />
@@ -136,12 +144,15 @@ function App() {
           path="/party"
           element={
             <CollectionPage
-              cardItem={cardItem}
-              setCardItem={setCardItem}
+              detailedCard={detailedCard}
+              setDetailedCard={setDetailedCard}
               fetchingCards={fetchingCards}
               fetchCardById={fetchCardById}
               favourites={favourites}
               toggleFavourite={toggleFavourite}
+              clickedCard={clickedCard}
+              setClickedCard={setClickedCard}
+              showClickedCard={showClickedCard}
             />
           }
         />

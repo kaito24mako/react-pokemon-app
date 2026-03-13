@@ -18,9 +18,9 @@ import water from "../../../assets/icons/type/water.png";
 import pokeball from "../../../assets/icons/logo/pokeball.png";
 
 function CardItem({
-  cardItem,
-  setCardItem,
-  handleCloseModal,
+  detailedCard,
+  setDetailedCard,
+  closeModal,
   favourites,
   toggleFavourite,
   colouredBackground,
@@ -45,8 +45,8 @@ function CardItem({
   // const [inCollection, setInCollection] = useState(false);
 
   function handleFavouriteClick(e, card) {
-    // stop modal from closing
     e.stopPropagation();
+
     // injects the favourited card to see whether it should be added or removed in the favourites array
     toggleFavourite(card);
 
@@ -54,26 +54,34 @@ function CardItem({
 
     if (inCollection) {
       playRemoveSound();
-      toast(`${card.name} removed from your party`);
+      toast(`${card.name} removed from your party`, {
+        closeOnClick: true,
+        pauseOnHover: false,
+      });
     } else {
       playAddSound();
-      toast(`${card.name} added to your party!`);
+      toast(`${card.name} added to your party!`, {
+        closeOnClick: true,
+        pauseOnHover: false,
+      });
     }
   }
 
   return (
     <>
-      {cardItem &&
-        cardItem.map((card, index) => (
+      {detailedCard &&
+        detailedCard.map((card, index) => (
           // if user has set the cards to have a coloured background, then map the card types as a class to have different background colours per type
           <div
             className={`card-item-container ${colouredBackground ? card.types?.[0].toLowerCase() : ""}`}
             key={index}
           >
-            <CloseBtn handleCloseModal={handleCloseModal} />
+            <CloseBtn closeModal={closeModal} />
 
             <div className="left-container">
-              <img src={card.image} className="item-image" />
+              <div className="card-wrapper">
+                <img src={card.image} className="card-image" alt={card.name} />
+              </div>
 
               <div className="image-details-wrapper">
                 <button
@@ -101,45 +109,53 @@ function CardItem({
             <div className="right-container">
               <h2 className="item-title">{card.name}</h2>
 
-              {/* REMOVE? */}
-              {/* <p className="item-description">{card.description}</p> */}
-
               <div className="stats-container">
                 <div className="stat">
                   <p className="stat-title">Health</p>
-                  <p className="health-stat">♥️ {card.hp} HP</p>
+                  {card.hp ? (
+                    <p className="health-stat">♥️ {card.hp} HP</p>
+                  ) : (
+                    <p>?</p>
+                  )}
                 </div>
 
                 <div className="stat">
                   <p className="stat-title">Type</p>
-                  {card.types?.map((type, index) => (
-                    <img
-                      className="type-icon"
-                      key={index}
-                      src={typeIcons[type.toLowerCase()]}
-                    />
-                  ))}
+                  {card.types ? (
+                    card.types.map((type, index) => (
+                      <img
+                        className="type-icon"
+                        key={index}
+                        src={typeIcons[type.toLowerCase()]}
+                      />
+                    ))
+                  ) : (
+                    <p>?</p>
+                  )}
                 </div>
 
                 <div className="stat">
                   <p className="stat-title">Weaknesses</p>
-                  {card.weaknesses?.map((weakness, index) => (
-                    // when mapping, there must only be one parent element
-                    <div className="icon-value-wrapper">
-                      <img
-                        className="type-icon"
-                        key={index}
-                        src={typeIcons[weakness.type.toLowerCase()]}
-                      />
-                      <p>{weakness.value}</p>
-                    </div>
-                  ))}
+                  {card.weaknesses ? (
+                    card.weaknesses.map((weakness, index) => (
+                      // when mapping, there must only be one parent element
+                      <div className="icon-value-wrapper">
+                        <img
+                          className="type-icon"
+                          key={index}
+                          src={typeIcons[weakness.type.toLowerCase()]}
+                        />
+                        <p>{weakness.value}</p>
+                      </div>
+                    ))
+                  ) : (
+                    <p>?</p>
+                  )}
                 </div>
 
                 <div className="stat">
                   <p className="stat-title">Retreat Cost</p>
-                  {/* card.retreat = '1', '2', etc., so how to make it the colorless icon? */}
-                  <p>{card.retreat}</p>
+                  {card.retreat ? <p>{card.retreat}</p> : <p>?</p>}
                 </div>
               </div>
 
@@ -152,11 +168,15 @@ function CardItem({
                     </p>
                   ))}
                 </div>
-                {card.abilities?.map((ability, index) => (
-                  <p className="ability-effect" key={index}>
-                    {ability.effect}
-                  </p>
-                ))}
+                {card.abilities ? (
+                  card.abilities.map((ability, index) => (
+                    <p className="ability-effect" key={index}>
+                      {ability.effect}
+                    </p>
+                  ))
+                ) : (
+                  <p className="ability-effect">None</p>
+                )}
               </div>
 
               {card.attacks?.map((attack, index) => (
@@ -184,14 +204,6 @@ function CardItem({
                   </div>
                 </div>
               ))}
-
-              {/* <div className="rule-container">
-            <div className="rule-title-wrapper">
-              <p>Card Rule</p>
-              <p>{card.rule}</p>
-            </div>
-            <p>{card.ruleDescription}</p>
-          </div> */}
             </div>
           </div>
         ))}

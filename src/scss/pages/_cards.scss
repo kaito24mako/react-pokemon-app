@@ -4,9 +4,12 @@
 .collectionPage-container {
   display: flex;
 
+  //? WHY IS IT NOT CENTERING?
+
   .cards-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex: 1;
     padding: 20px;
     height: 93dvh;
@@ -74,7 +77,7 @@
 
   .modal-backdrop {
     position: fixed;
-    /* covers entire parent container */
+    /* inset covers entire parent container */
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
   }

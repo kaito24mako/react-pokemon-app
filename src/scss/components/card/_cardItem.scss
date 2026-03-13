@@ -1,37 +1,5 @@
 @use "../../abstracts/" as *;
 
-@media (max-width: 500px) {
-  .card-item-container {
-    flex-direction: column;
-    max-height: 100vh;
-    height: 90%;
-    overflow-y: scroll;
-
-    .left-container {
-      padding-top: 50px;
-      img.item-image {
-        height: 510px !important;
-      }
-
-      .details-wrapper {
-        font-size: 0.6rem;
-      }
-    }
-
-    .right-container {
-      h2 {
-        position: absolute;
-        bottom: 81vh;
-      }
-
-      .stats-container .stat {
-        width: 165px;
-        height: 50px;
-      }
-    }
-  }
-}
-
 .card-item-container {
   display: flex;
   gap: 30px;
@@ -45,6 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: $card-large-shadow;
 
   border-radius: 20px;
   color: $secondary-color;
@@ -53,14 +22,46 @@
   .right-container {
     flex: 1;
 
-    img.item-image {
-      width: 800px;
-      height: 560px;
-
-      border: 1px solid transparent;
-      border-radius: 10px;
+    .card-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
       box-shadow: $card-medium-shadow;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -100%;
+        width: 60%;
+        height: 200%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transform: rotate(25deg);
+        animation: shine 0.7s 1.5s ease forwards;
+      }
+
+      img.card-image {
+        width: 800px;
+        height: 560px;
+
+        border: 1px solid transparent;
+        border-radius: 10px;
+      }
     }
+  }
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 150%;
   }
 }
 
@@ -182,6 +183,7 @@
 
   .ability-effect {
     opacity: $medium-opacity;
+    padding-left: 5px;
   }
 }
 
@@ -192,7 +194,7 @@
   flex-direction: column;
   gap: 5px;
   padding: 10px;
-  margin-right: 17px;
+  margin-right: 16px;
 
   font-size: $small-font;
   border-radius: 15px;
@@ -222,5 +224,37 @@
 
   .attack-effect {
     opacity: $medium-opacity;
+  }
+}
+
+@media (max-width: 610px) {
+  .card-item-container {
+    flex-direction: column;
+    max-height: 100vh;
+    height: 90%;
+    overflow-y: scroll;
+
+    .left-container {
+      padding-top: 50px;
+      img.item-image {
+        height: 510px !important;
+      }
+
+      .details-wrapper {
+        font-size: 0.6rem;
+      }
+    }
+
+    .right-container {
+      h2 {
+        position: absolute;
+        bottom: 81vh;
+      }
+
+      .stats-container .stat {
+        width: 165px;
+        height: 50px;
+      }
+    }
   }
 }

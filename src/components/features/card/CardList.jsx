@@ -1,12 +1,13 @@
-import { SyncLoader } from "react-spinners";
 import { playClickSound } from "../../audio/click.js";
 
-function CardList({ cards, fetchingCards, fetchCardById, handleClickedCard }) {
+import Spinner from "../loader/Spinner.jsx";
+
+function CardList({ cards, fetchingCards, fetchCardById, showClickedCard }) {
   return (
     <div className="cards-grid-container">
       {/* if loading... render spinner, or else render cards */}
       {fetchingCards ? (
-        <SyncLoader color="#1B1B1B" margin={3} size={9} />
+        <Spinner />
       ) : (
         cards?.map((card, index) => (
           <div
@@ -16,8 +17,8 @@ function CardList({ cards, fetchingCards, fetchCardById, handleClickedCard }) {
               playClickSound();
               // get id for detailed card data
               fetchCardById(card.id);
-              // tells CardsPage which card was clicked to open modal
-              handleClickedCard(card);
+              // if a card was clicked, open the modal
+              showClickedCard(card);
             }}
           >
             <img className="card" src={card.image} alt={card.name} />
