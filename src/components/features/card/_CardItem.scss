@@ -1,4 +1,4 @@
-@use "../../abstracts/" as *;
+@use "../../../scss/abstracts/" as *;
 
 .card-item-container {
   display: flex;
@@ -21,43 +21,6 @@
   .left-container,
   .right-container {
     flex: 1;
-
-    .card-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: $card-medium-shadow;
-      transform-style: preserve-3d;
-      // transition:
-      //   transform 0.3s ease,
-      //   box-shadow 0.4s ease;
-
-      transform: perspective(1200px) rotateY(12deg) rotateX(3deg) scale(1.01);
-      box-shadow: -9px 7px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .shining-card::after {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -100%;
-      width: 60%;
-      height: 200%;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-      );
-      transform: rotate(25deg);
-      animation: shine 0.7s ease forwards;
-
-      img.card-image {
-        width: 800px;
-        height: 560px;
-        border-radius: 10px;
-      }
-    }
   }
 }
 
@@ -70,12 +33,51 @@
   }
 }
 
-/* LEFT CONTAINER with image, favourite button and details */
+/* LEFT CONTAINER with card image, favourite button and details */
 
 .left-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 15px;
+
+  .card-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.4);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: perspective(1000px) rotateY(15deg) rotateX(3deg);
+      box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .shining-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transform: rotate(25deg);
+    animation: shine 0.7s ease forwards;
+
+    img.card-image {
+      width: 800px;
+      height: 560px;
+      border-radius: 10px;
+    }
+  }
 
   .image-details-wrapper {
     display: flex;
@@ -119,15 +121,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  // height: 70dvh;
-  // overflow-y: scroll;
 
   h2 {
     font-size: $vlarge-font;
   }
 
   h3 {
-    font-size: $large-font;
+    font-size: clamp(1rem, 3vw, 1.3rem);
   }
 
   /* statistics cards - health, type, weaknesses, retreat */
@@ -160,6 +160,10 @@
         .stat-title {
           font-weight: 600;
           font-style: italic;
+
+          &.type {
+            margin-bottom: 5px;
+          }
         }
 
         .icon-value-wrapper {

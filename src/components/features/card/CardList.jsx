@@ -1,11 +1,8 @@
-import { playClickSound } from "../../audio/click.js";
-
 import Spinner from "../loader/Spinner.jsx";
 
 function CardList({ cards, fetchingCards, fetchCardById, showClickedCard }) {
   return (
     <div className="cards-grid-container">
-      {/* if loading... render spinner, or else render cards */}
       {fetchingCards ? (
         <Spinner />
       ) : (
@@ -14,7 +11,6 @@ function CardList({ cards, fetchingCards, fetchCardById, showClickedCard }) {
             className="card-wrapper"
             key={index}
             onClick={() => {
-              playClickSound();
               // get id for detailed card data
               fetchCardById(card.id);
               // if a card was clicked, open the modal

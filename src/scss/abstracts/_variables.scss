@@ -28,7 +28,7 @@ $secondary-bg-gradient-filterbar-color: var(
 );
 
 $vlarge-font: clamp(2rem, 5vw, 3rem);
-$large-font: 1.5rem;
+$large-font: clamp(1.3rem, 3vw, 1.5rem);
 $medium-font: clamp(0.9rem, 3vw, 1rem);
 $small-font: 0.9rem;
 $vsmall-font: 0.8rem;

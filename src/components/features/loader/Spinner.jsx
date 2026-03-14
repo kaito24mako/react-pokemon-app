@@ -1,19 +1,21 @@
-import { MagnifyingGlass } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
+import { useTheme } from "../../../context/ThemeContext";
 
 function Spinner() {
+  const { isDark } = useTheme();
+
   return (
-    <>
-      <MagnifyingGlass
-        visible={true}
-        height="120"
-        width="120"
-        ariaLabel="magnifying-glass-loading"
-        wrapperStyle={{}}
-        wrapperClass="magnifying-glass-wrapper"
-        glassColor="#ffffff"
-        color="#e60000"
-      />
-    </>
+    <RotatingLines
+      visible={true}
+      height="50"
+      width="50"
+      color={isDark ? "#ffffff" : "#000000"}
+      strokeWidth="5"
+      animationDuration="0.75"
+      ariaLabel="rotating-lines-loading"
+      wrapperStyle={{}}
+      wrapperClass="spinner-loader"
+    />
   );
 }
 

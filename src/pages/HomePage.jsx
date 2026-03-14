@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { playClickSound } from "../components/audio/click";
 
 import pokeball from "../assets/icons/logo/pokeball.png";
 
@@ -25,14 +24,14 @@ function HomePage() {
                 <strong>
                   <em>searching</em>{" "}
                 </strong>
-                of Pokemon cards
+                of Pokémon cards
               </h2>
               <p>
-                Fly through all PokemonTCG cards with our blazingly fast
+                Fly through all PokémonTCG cards with our blazingly fast
                 searching service, and filter cards to your liking!
               </p>
             </div>
-            <Link className="start-button" to="/cards" onClick={playClickSound}>
+            <Link className="start-button" to="/cards">
               Start Searching!
             </Link>
           </div>
@@ -53,7 +52,7 @@ function HomePage() {
                 your friends!
               </p>
             </div>
-            <Link className="start-button" to="/party" onClick={playClickSound}>
+            <Link className="start-button" to="/party">
               View Your Party!
             </Link>
           </div>

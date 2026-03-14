@@ -6,11 +6,10 @@ function Footer() {
   return (
     <div className="footer-container">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum placeat
-        laboriosam nihil ex dolorem sint assumenda nulla optio necessitatibus ad
-        numquam soluta veritatis, corrupti, suscipit dolore exercitationem sequi
-        consequatur consequuntur quia neque eos incidunt. Praesentium nulla
-        dolorum sed unde voluptate.
+        All information and images presented on this website about the Pokémon
+        Trading Card Game is intellectual property of The Pokémon Company, Game
+        Freak, Nintendo, Creatures and/or Wizards of the Coast. These companies
+        did not produce, endorse, support, or affiliate with Search ém All!{" "}
       </p>
       <div className="footer-wrapper">
         <div className="copyright">

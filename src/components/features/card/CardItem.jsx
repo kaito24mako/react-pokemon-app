@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { playAddSound } from "../../audio/add";
 import { playRemoveSound } from "../../audio/remove";
+import { playShineSound } from "../../audio/shine";
 
 import CloseBtn from "../button/CloseBtn";
 
@@ -89,9 +90,10 @@ function CardItem({
                 <img
                   src={card.image}
                   className="card-image"
-                  // to allow for the animation to play on every click
                   onClick={() => {
+                    playShineSound();
                     setShiningCard(false);
+                    // to allow for the animation to play on every click
                     setTimeout(() => setShiningCard(true), 10);
                   }}
                   alt={card.name}
@@ -137,7 +139,7 @@ function CardItem({
                   </div>
 
                   <div className="stat">
-                    <p className="stat-title">Type</p>
+                    <p className="stat-title type">Type</p>
                     {card.types ? (
                       card.types.map((type, index) => (
                         <img
@@ -185,7 +187,6 @@ function CardItem({
                       {ability.name}
                     </p>
                   ))}
-                  {/* </div> */}
                   {card.abilities ? (
                     card.abilities.map((ability, index) => (
                       <p className="ability-effect" key={index}>

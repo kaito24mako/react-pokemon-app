@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 
+import { ThemeProvider } from "./context/ThemeContext";
+
 import Layout from "./components/layout/Layout";
 
 import HomePage from "./pages/HomePage";
@@ -10,7 +12,7 @@ import CardsPage from "./pages/CardsPage";
 import NotFound from "./pages/NotFound";
 import CollectionPage from "./pages/CollectionPage";
 
-function App() {
+function App({ isDark }) {
   const [cards, setCards] = useState([]); // for list of cards
   const [detailedCard, setDetailedCard] = useState([]); // for single card item
   const [search, setSearch] = useState(""); // string of searched card
@@ -114,51 +116,53 @@ function App() {
   }
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={<HomePage search={search} handleSearch={handleSearch} />}
-        />
-        <Route
-          path="/cards"
-          element={
-            <CardsPage
-              cards={cards}
-              search={search}
-              detailedCard={detailedCard}
-              handleSearch={handleSearch}
-              handleSubmitSearch={handleSubmitSearch}
-              fetchingCards={fetchingCards}
-              fetchCardById={fetchCardById}
-              setDetailedCard={setDetailedCard}
-              favourites={favourites}
-              toggleFavourite={toggleFavourite}
-              clickedCard={clickedCard}
-              setClickedCard={setClickedCard}
-              showClickedCard={showClickedCard}
-            />
-          }
-        />
-        <Route
-          path="/party"
-          element={
-            <CollectionPage
-              detailedCard={detailedCard}
-              setDetailedCard={setDetailedCard}
-              fetchingCards={fetchingCards}
-              fetchCardById={fetchCardById}
-              favourites={favourites}
-              toggleFavourite={toggleFavourite}
-              clickedCard={clickedCard}
-              setClickedCard={setClickedCard}
-              showClickedCard={showClickedCard}
-            />
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <ThemeProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={<HomePage search={search} handleSearch={handleSearch} />}
+          />
+          <Route
+            path="/cards"
+            element={
+              <CardsPage
+                cards={cards}
+                search={search}
+                detailedCard={detailedCard}
+                handleSearch={handleSearch}
+                handleSubmitSearch={handleSubmitSearch}
+                fetchingCards={fetchingCards}
+                fetchCardById={fetchCardById}
+                setDetailedCard={setDetailedCard}
+                favourites={favourites}
+                toggleFavourite={toggleFavourite}
+                clickedCard={clickedCard}
+                setClickedCard={setClickedCard}
+                showClickedCard={showClickedCard}
+              />
+            }
+          />
+          <Route
+            path="/party"
+            element={
+              <CollectionPage
+                detailedCard={detailedCard}
+                setDetailedCard={setDetailedCard}
+                fetchingCards={fetchingCards}
+                fetchCardById={fetchCardById}
+                favourites={favourites}
+                toggleFavourite={toggleFavourite}
+                clickedCard={clickedCard}
+                setClickedCard={setClickedCard}
+                showClickedCard={showClickedCard}
+              />
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 }
 

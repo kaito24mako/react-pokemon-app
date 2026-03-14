@@ -1,4 +1,5 @@
-// the vertical radio bar on Cards and Collection pages
+//! NOT CURRENTLY BEING USED
+
 function Filterbar() {
   return (
     <div className="filter-container">

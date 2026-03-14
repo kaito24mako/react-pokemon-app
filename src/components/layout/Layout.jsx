@@ -1,23 +1,20 @@
 import { Outlet } from "react-router-dom";
-
-import { useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 function Layout() {
-  const [isDark, setIsDark] = useState(false);
-
-  function handleThemeToggle() {
-    setIsDark((prev) => !prev);
-  }
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <div className="app" data-theme={isDark ? "dark" : "light"}>
-      <Navbar handleThemeToggle={handleThemeToggle} isDark={isDark} />
+      <Navbar toggleTheme={toggleTheme} isDark={isDark} />
+
       <div className="app-content">
         <Outlet />
       </div>
+
       <Footer />
     </div>
   );

@@ -1,26 +1,26 @@
 @use "./base/base";
 @use "./base/reset";
 
-@use "./components/button/closeBtn";
-@use "./components/button/toggleCardBackground";
+@use "../components/features/button/CloseBtn";
+@use "../components/features/button/ToggleCardBackground";
 
+@use "../components/features/card/CardItem";
+@use "../components/features/card/CardList";
+@use "../components/features/card/CollectionList";
 @use "./components/card/cardColors";
-@use "./components/card/cardItem";
-@use "./components/card/cardList";
-@use "./components/card/collectionList";
 
-@use "./components/filter/filterbar";
+@use "../components/icons/types";
 
-@use "./components/icons/types";
+@use "../components/features/search/SearchForm";
 
-@use "./components/search/searchForm";
+@use "../components/features/theme/ThemeToggle";
 
-@use "./components/theme/themeToggle";
+@use "../components/features/loader/Spinner";
 
-@use "./layout/footer";
-@use "./layout/navbar";
+@use "../components/layout/Navbar";
+@use "../components/layout/Footer";
 
-@use "./pages/cards";
-@use "./pages/collection";
-@use "./pages/home";
-@use "./pages/notFound";
+@use "../pages/HomePage";
+@use "../pages/CardsPage";
+@use "../pages/CollectionPage";
+@use "../pages/NotFound";

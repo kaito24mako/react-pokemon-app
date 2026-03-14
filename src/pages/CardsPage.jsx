@@ -24,12 +24,10 @@ function CardsPage({
 }) {
   const [colouredBackground, setColouredBackground] = useState(true);
 
-  // close modal
   function closeModal() {
     setClickedCard(null);
   }
 
-  // for toggling between coloured and non-coloured card backgrounds
   function toggleColouredCardBg() {
     setColouredBackground((prev) => !prev);
   }
@@ -67,7 +65,6 @@ function CardsPage({
       </div>
 
       {/* MODAL - CARD ITEM */}
-      {/* only render modal when a card is clicked */}
       {/* asked Cursor for some help! */}
       {clickedCard && (
         <div className="modal-backdrop" onClick={closeModal}>
