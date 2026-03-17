@@ -24,15 +24,6 @@
   }
 }
 
-@keyframes shine {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 150%;
-  }
-}
-
 /* LEFT CONTAINER with card image, favourite button and details */
 
 .left-container {
@@ -52,7 +43,7 @@
 
     &:hover {
       transform: perspective(1000px) rotateY(15deg) rotateX(3deg);
-      box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: -8px 8px 5px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -112,6 +103,15 @@
       align-items: center;
       gap: 10px;
     }
+  }
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 150%;
   }
 }
 

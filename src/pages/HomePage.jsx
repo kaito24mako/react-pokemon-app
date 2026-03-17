@@ -6,7 +6,11 @@ function HomePage() {
   return (
     <div className="home-container">
       <div className="title-container">
-        <img src={pokeball} className="floating-pokeball" />
+        <img
+          src={pokeball}
+          className="floating-pokeball"
+          alt="floating pokeball"
+        />
         <h1>Wanna Search 'Em All?</h1>
         <p>Then let's get to work, trainer!</p>
       </div>
@@ -16,6 +20,7 @@ function HomePage() {
           <img
             src="https://assets.tcgdex.net/en/xy/xy2/69/high.webp"
             className="card-one"
+            alt="Mega Charizard EX card"
           />
           <div className="quote-button-wrapper">
             <div className="quote-wrapper">
@@ -59,6 +64,7 @@ function HomePage() {
           <img
             src="https://assets.tcgdex.net/en/bw/bw11/RC24/high.webp"
             className="home-card-image card-two"
+            alt="Mew card"
           />
         </div>
       </div>

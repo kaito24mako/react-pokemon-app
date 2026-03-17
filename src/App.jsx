@@ -1,18 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ThemeProvider } from "./context/ThemeContext";
 
 import axios from "axios";
 
-import { ThemeProvider } from "./context/ThemeContext";
-
 import Layout from "./components/layout/Layout";
-
 import HomePage from "./pages/HomePage";
 import CardsPage from "./pages/CardsPage";
 import NotFound from "./pages/NotFound";
 import CollectionPage from "./pages/CollectionPage";
 
-function App({ isDark }) {
+function App() {
   const [cards, setCards] = useState([]); // for list of cards
   const [detailedCard, setDetailedCard] = useState([]); // for single card item
   const [search, setSearch] = useState(""); // string of searched card
@@ -60,8 +58,6 @@ function App({ isDark }) {
         `https://api.tcgdex.net/v2/en/cards?name=${search}`,
       );
 
-      // filter cards that don't have an image
-      // edit the image url to render it
       const filteredCards = response.data
         .filter((card) => card.image)
         .map((card) => ({
@@ -81,7 +77,6 @@ function App({ isDark }) {
     }
   }
 
-  // gets more detailed object of the card that's clicked
   async function fetchCardById(id) {
     try {
       const response = await axios.get(
@@ -106,6 +101,7 @@ function App({ isDark }) {
     setSearch(e.target.value);
   }
 
+  // fetch cards when user submits their search result
   function handleSubmitSearch(trimmed) {
     fetchCardsByName(trimmed);
   }

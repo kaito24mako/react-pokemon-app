@@ -1,3 +1,6 @@
+// created with help of AI!
+//! need to understand more
+
 import { useState, useContext, createContext } from "react";
 
 const ThemeContext = createContext();

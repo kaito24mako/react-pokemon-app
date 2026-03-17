@@ -1,7 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 
 function SearchForm({ search, handleSearch, handleSubmitSearch }) {
-  // form validations
   function onSubmit(e) {
     e.preventDefault();
 
