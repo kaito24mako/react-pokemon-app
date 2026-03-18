@@ -1,8 +1,8 @@
-# 🔎 Search 'em All!
+# 🔎  Search 'em All!
 
 A PokemonTCG search engine in which users can search for cards and add it to their collection for tracking purposes 
 
-## ⚙️ Skills
+## ⚙️  Skills
 
 **SASS**
 
