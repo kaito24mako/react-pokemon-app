@@ -46,7 +46,6 @@ function CardItem({
   // useState only stores the state locally for one mount/render!
   // so useState won't work when switching between the cards and collection page
   // instead, use array.some() method
-  // const [inCollection, setInCollection] = useState(false);
 
   function handleFavouriteClick(e, card) {
     e.stopPropagation();
@@ -75,7 +74,6 @@ function CardItem({
     <>
       {detailedCard &&
         detailedCard.map((card, index) => (
-          // if user has set the cards to have a coloured background, then map the card types as a class to have different background colours per type
           <div
             className={`card-item-container ${colouredBackground ? card.types?.[0].toLowerCase() : ""}`}
             key={index}
@@ -157,7 +155,6 @@ function CardItem({
                     <p className="stat-title">Weaknesses</p>
                     {card.weaknesses ? (
                       card.weaknesses.map((weakness, index) => (
-                        // when mapping, there must only be one parent element
                         <div className="icon-value-wrapper">
                           <img
                             className="type-icon"

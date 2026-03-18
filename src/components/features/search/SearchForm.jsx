@@ -1,7 +1,7 @@
 import { ToastContainer, toast } from "react-toastify";
 
 function SearchForm({ search, handleSearch, handleSubmitSearch }) {
-  function onSubmit(e) {
+  function handleValidation(e) {
     e.preventDefault();
 
     const trimmed = search.trim("");
@@ -30,7 +30,7 @@ function SearchForm({ search, handleSearch, handleSubmitSearch }) {
   }
   return (
     <div className="form-error-container">
-      <form className="form-container" onSubmit={onSubmit}>
+      <form className="form-container" onSubmit={handleValidation}>
         <label htmlFor="card-search">🔎</label>
         <input
           type="search"
@@ -39,7 +39,7 @@ function SearchForm({ search, handleSearch, handleSubmitSearch }) {
           placeholder="search card..."
           value={search}
           onChange={handleSearch}
-          aria-label="search for Pokemon cards"
+          aria-label="Search for Pokemon cards"
         />
       </form>
       <ToastContainer />

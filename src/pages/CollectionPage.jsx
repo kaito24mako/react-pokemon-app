@@ -3,6 +3,7 @@ import { useState } from "react";
 import CollectionList from "../components/features/card/CollectionList";
 import CardItem from "../components/features/card/CardItem";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
+import TextFileBtn from "../components/features/button/TextFileBtn";
 
 function CollectionPage({
   detailedCard,
@@ -13,7 +14,6 @@ function CollectionPage({
   toggleFavourite,
 }) {
   // to track if a card was clicked to open modal
-  // easier to track than detailedCard since detailedCard is an array of objects
   const [clickedCard, setClickedCard] = useState(null);
 
   const [colouredBackground, setColouredBackground] = useState(true);
@@ -23,7 +23,6 @@ function CollectionPage({
     setClickedCard(card);
   }
 
-  // close modal
   function closeModal() {
     setClickedCard(null);
   }
@@ -46,12 +45,11 @@ function CollectionPage({
             toggleColouredCardBg={toggleColouredCardBg}
             colouredBackground={colouredBackground}
           />
+          <TextFileBtn favourites={favourites} />
         </div>
 
         <CollectionList
-          // render the favourites array
-          // use the same prop name as in CardsPage since both pages require the same functionalities (e.g., fetchCardById, opening modal)
-          // props never conflict since they are scoped to each component instance - CollectionPage renders a CardList instance with its props, not with CardPages' props
+          // props never conflict with CardsPage since they are scoped to each component instance - CollectionPage renders a CardList instance with its props, not with CardPages' props
           cards={favourites}
           fetchingCards={fetchingCards}
           fetchCardById={fetchCardById}
@@ -63,8 +61,7 @@ function CollectionPage({
         </p>
       </div>
 
-      {/* MODAL - CARD ITEM */}
-      {/* only render modal when a card is clicked */}
+      {/* modal (card item) */}
       {clickedCard && (
         <div className="modal-backdrop" onClick={closeModal}>
           <CardItem

@@ -7,14 +7,14 @@ import axios from "axios";
 import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import CardsPage from "./pages/CardsPage";
-import NotFound from "./pages/NotFound";
 import CollectionPage from "./pages/CollectionPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [cards, setCards] = useState([]); // for list of cards
   const [detailedCard, setDetailedCard] = useState([]); // for single card item
   const [search, setSearch] = useState(""); // string of searched card
-  const [fetchingCards, setFetchingCards] = useState(false); // loading spinner when data hasn't rendered
+  const [fetchingCards, setFetchingCards] = useState(false); // for spinner loader
   const [clickedCard, setClickedCard] = useState(); // to track if a card was clicked
 
   // used Cursor AI to help!
