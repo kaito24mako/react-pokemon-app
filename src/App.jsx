@@ -101,12 +101,11 @@ function App() {
     setSearch(e.target.value);
   }
 
-  // fetch cards when user submits their search result
   function handleSubmitSearch(trimmed) {
     fetchCardsByName(trimmed);
   }
 
-  // open modal when a card is clicked
+  // open the card item modal when a card is clicked
   function showClickedCard(card) {
     setClickedCard(card);
   }

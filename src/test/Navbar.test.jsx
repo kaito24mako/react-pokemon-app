@@ -17,12 +17,12 @@ describe("Navbar", () => {
     );
   });
 
-  test("navlink for cards page is rendered properly", () => {
+  test("navlink for the cards page is rendered properly", () => {
     const navlink = screen.getByText("Cards");
     expect(navlink).toBeInTheDocument();
   });
 
-  test("the React router link goes to the correct url", () => {
+  test("navlink for the cards page goes to the correct url", () => {
     const link = screen.getByRole("link", { name: /cards/i });
     expect(link).toHaveAttribute("href", "/cards");
   });

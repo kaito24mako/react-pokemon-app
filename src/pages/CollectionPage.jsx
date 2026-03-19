@@ -13,7 +13,7 @@ function CollectionPage({
   favourites,
   toggleFavourite,
 }) {
-  // to track if a card was clicked to open modal
+  // to track if a card was clicked to open the card item modal
   const [clickedCard, setClickedCard] = useState(null);
 
   const [colouredBackground, setColouredBackground] = useState(true);
