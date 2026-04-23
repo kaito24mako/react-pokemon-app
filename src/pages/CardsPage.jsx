@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 import SearchForm from "../components/features/search/SearchForm";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
@@ -45,7 +46,9 @@ function CardsPage({
             search={search}
             handleSearch={handleSearch}
             handleSubmitSearch={handleSubmitSearch}
-          />
+          >
+            <ToastContainer />
+          </SearchForm>
           <ToggleCardBackground
             toggleColouredCardBg={toggleColouredCardBg}
             colouredBackground={colouredBackground}

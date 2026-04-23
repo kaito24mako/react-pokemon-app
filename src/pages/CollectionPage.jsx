@@ -18,16 +18,18 @@ function CollectionPage({
 
   const [colouredBackground, setColouredBackground] = useState(true);
 
-  // open modal when a card is clicked
+  // the card that's clicked is injected into the 'clickedCard' state to open the card item modal
   function showClickedCard(card) {
     setClickedCard(card);
   }
 
+  // on click of the 'modal-background' div, it sets the 'clickedCard' state to null and thus closes the card item modal
   function closeModal() {
     setClickedCard(null);
   }
 
   // for toggling between coloured and non-coloured card backgrounds
+  // changes the colouredBackground state to toggle between true and false - true being the background IS coloured, and false being it's NOT
   function toggleColouredCardBg() {
     setColouredBackground((prev) => !prev);
   }
