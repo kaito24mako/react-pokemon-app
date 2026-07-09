@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import SearchForm from "../components/features/search/SearchForm";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";

@@ -3,7 +3,6 @@ import { useState } from "react";
 import CollectionList from "../components/features/card/CollectionList";
 import CardItem from "../components/features/card/CardItem";
 import ToggleCardBackground from "../components/features/button/ToggleCardBackground";
-import TextFileBtn from "../components/features/button/TextFileBtn";
 
 function CollectionPage({
   detailedCard,
@@ -47,7 +46,6 @@ function CollectionPage({
             toggleColouredCardBg={toggleColouredCardBg}
             colouredBackground={colouredBackground}
           />
-          <TextFileBtn favourites={favourites} />
         </div>
 
         <CollectionList
